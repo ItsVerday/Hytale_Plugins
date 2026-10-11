@@ -48,9 +48,7 @@ public class Round2DBiomeProviderScanner extends BiomeProviderScanner {
         for (int i = 0; i < positionsCount; i++) {
             if (rControl.stop) return;
 
-            int x = sortedPositions[indexX(i)];
-            int z = sortedPositions[indexZ(i)];
-            rOffset.set(x, 0, z);
+            rOffset.set(sortedPositions[indexX(i)], 0, sortedPositions[indexZ(i)]);
             context.pipe.accept(rOffset, rControl);
         }
     }
