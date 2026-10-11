@@ -21,8 +21,11 @@ import io.github.itsverday.carta.hytalegenerator.assets.biomeproviders.BiomeProv
 import io.github.itsverday.carta.hytalegenerator.biomeproviders.BiomeProvider;
 import io.github.itsverday.carta.hytalegenerator.biomeproviders.ConstantBiomeProvider;
 import io.github.itsverday.carta.hytalegenerator.cartas.BiomeProviderCarta;
+import io.github.itsverday.carta.hytalegenerator.cartas.SingleThreadedCarta;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
+
+import javax.annotation.Nonnull;
 
 public class CartaWorldStructureAsset extends WorldStructureAsset {
     public static final BuilderCodec<CartaWorldStructureAsset> CODEC = BuilderCodec.builder(
@@ -87,9 +90,16 @@ public class CartaWorldStructureAsset extends WorldStructureAsset {
     private FrameworkAsset[] frameworkAssets = new FrameworkAsset[0];
     private PositionProviderAsset spawnPositionsAsset = new ListPositionProviderAsset();
 
+    private WorldStructure built = null;
+
     @NullableDecl
     @Override
-    public WorldStructure build(@NonNullDecl Argument argument) {
+    public synchronized WorldStructure build(@NonNullDecl Argument argument) {
+        if (built == null) built = buildCached(argument);
+        return built;
+    }
+
+    private WorldStructure buildCached(@Nonnull Argument argument) {
         ReferenceBundle referenceBundle = new ReferenceBundle();
 
         for (FrameworkAsset frameworkAsset: frameworkAssets) {
@@ -111,11 +121,14 @@ public class CartaWorldStructureAsset extends WorldStructureAsset {
 
         BiomeProvider biomeProvider = biomeProviderAsset.build(biomeProviderArgument);
         Registry<Biome> biomeRegistry = biomeProviderArgument.buildBiomeRegistry();
-        BiomeProviderCarta carta = new BiomeProviderCarta(biomeProvider, biomeProviderArgument.buildBiomeRemap());
+        BiomeProviderCarta baseCarta = new BiomeProviderCarta(biomeProvider, biomeProviderArgument.buildBiomeRemap());
+        // BatchComputeCarta batchComputeCarta = new BatchComputeCarta(baseCarta, 32, 16);
+        SingleThreadedCarta singleThreadedCarta = new SingleThreadedCarta(baseCarta);
+
         int defaultRadius = Math.max(1, biomeTransitionDistance / 2);
         PositionProvider spawnPositions = spawnPositionsAsset.build(new PositionProviderAsset.Argument(argument.parentSeed, referenceBundle, argument.workerId, argument.threadBridge));
 
-        return new WorldStructure(carta, biomeRegistry, defaultRadius, maxBiomeEdgeDistance, spawnPositions);
+        return new WorldStructure(singleThreadedCarta, biomeRegistry, defaultRadius, maxBiomeEdgeDistance, spawnPositions);
     }
 
     @NonNullDecl
