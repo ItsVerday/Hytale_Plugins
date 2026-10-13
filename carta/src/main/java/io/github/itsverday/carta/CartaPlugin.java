@@ -42,6 +42,7 @@ public class CartaPlugin extends JavaPlugin {
     private HytaleGenerator hytaleGeneratorPlugin;
     private AssetManager hytaleGeneratorAssetManager;
     private Method hytaleGeneratorAssetManagerTriggerReloadListeners;
+    private DefaultAssetMap<String, WorldStructureAsset> worldStructureAssets = null;
 
     public CartaPlugin(@Nonnull JavaPluginInit init) {
         super(init);
@@ -56,6 +57,12 @@ public class CartaPlugin extends JavaPlugin {
             hytaleGeneratorAssetManager = (AssetManager) hytaleGeneratorAssetManagerField.get(hytaleGeneratorPlugin);
             hytaleGeneratorAssetManagerTriggerReloadListeners = AssetManager.class.getDeclaredMethod("triggerReloadListeners");
             hytaleGeneratorAssetManagerTriggerReloadListeners.setAccessible(true);
+
+            hytaleGeneratorAssetManager.registerReloadListener(() -> {
+                if (worldStructureAssets != null) {
+                    clearCachedCartaWorldStructures(worldStructureAssets);
+                }
+            });
         } catch (Exception e) {
             LOGGER.atWarning().withCause(e).log("Unable to setup hot reloading!");
         }
@@ -134,6 +141,7 @@ public class CartaPlugin extends JavaPlugin {
                 .build()
         );
 
+        getEventRegistry().register(LoadedAssetsEvent.class, WorldStructureAsset.class, this::worldStructuresReloaded);
         getEventRegistry().register(LoadedAssetsEvent.class, BiomeProviderAsset.class, this::biomeProvidersReloaded);
         getEventRegistry().register(LoadedAssetsEvent.class, BiomeProviderConditionAsset.class, this::biomeProviderConditionsReloaded);
         getEventRegistry().register(LoadedAssetsEvent.class, BiomeProviderScannerAsset.class, this::biomeScannersReloaded);
@@ -153,6 +161,19 @@ public class CartaPlugin extends JavaPlugin {
                 LOGGER.atWarning().withCause(e).log("Unable to setup Renode integration!");
             }
         }
+    }
+
+    private void clearCachedCartaWorldStructures(DefaultAssetMap<String, WorldStructureAsset> worldStructureAssets) {
+        for (String assetKey: worldStructureAssets.getAssetMap().keySet()) {
+            WorldStructureAsset asset = worldStructureAssets.getAsset(assetKey);
+            if (asset instanceof CartaWorldStructureAsset cartaWorldStructureAsset) {
+                cartaWorldStructureAsset.clearBuilt();
+            }
+        }
+    }
+
+    private void worldStructuresReloaded(@Nonnull LoadedAssetsEvent<String, WorldStructureAsset, DefaultAssetMap<String, WorldStructureAsset>> event) {
+        worldStructureAssets = event.getAssetMap();
     }
 
     private void biomeProvidersReloaded(@Nonnull LoadedAssetsEvent<String, BiomeProviderAsset, DefaultAssetMap<String, BiomeProviderAsset>> event) {

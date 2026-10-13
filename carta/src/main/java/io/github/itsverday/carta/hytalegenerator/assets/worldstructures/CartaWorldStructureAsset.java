@@ -92,6 +92,10 @@ public class CartaWorldStructureAsset extends WorldStructureAsset {
 
     private WorldStructure built = null;
 
+    public void clearBuilt() {
+        built = null;
+    }
+
     @NullableDecl
     @Override
     public synchronized WorldStructure build(@NonNullDecl Argument argument) {
