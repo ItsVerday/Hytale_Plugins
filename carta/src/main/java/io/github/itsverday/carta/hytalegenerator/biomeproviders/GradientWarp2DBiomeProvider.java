@@ -33,13 +33,13 @@ public class GradientWarp2DBiomeProvider extends BiomeProvider {
         rPosition.set(context.position);
         rDensityContext.position = rPosition;
 
-        double originValue = warpField.process(rDensityContext);
+        double originValue = warpField.evaluate(rDensityContext);
 
         rPosition.set(context.position.x + sampleDistance, context.position.y, context.position.z);
-        double deltaX = warpField.process(rDensityContext) - originValue;
+        double deltaX = warpField.evaluate(rDensityContext) - originValue;
 
         rPosition.set(context.position.x, context.position.y, context.position.z + sampleDistance);
-        double deltaZ = warpField.process(rDensityContext) - originValue;
+        double deltaZ = warpField.evaluate(rDensityContext) - originValue;
 
         double offsetX = deltaX / sampleDistance * warpFactor;
         double offsetZ = deltaZ / sampleDistance * warpFactor;

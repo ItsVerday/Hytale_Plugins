@@ -145,6 +145,10 @@ public class Node implements Identified, CodeGenerator {
         this.variant = variant;
     }
 
+    public ArrayList<Content> getContents() {
+        return contents;
+    }
+
     @Override
     public String getIdentifier() {
         return Utils.fixIdentifier(id, "NODE_");

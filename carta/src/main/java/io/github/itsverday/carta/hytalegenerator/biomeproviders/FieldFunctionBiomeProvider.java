@@ -27,7 +27,7 @@ public class FieldFunctionBiomeProvider extends BiomeProvider {
     public int process(@NonNullDecl Context context) {
         rContext.position = context.position;
         if (context.anchor != null) rContext.densityAnchor = context.anchor;
-        double fieldValue = density.process(rContext);
+        double fieldValue = density.evaluate(rContext);
 
         for (FieldDelimiter delimiter: delimiters) {
             if (delimiter.isInside(fieldValue)) {

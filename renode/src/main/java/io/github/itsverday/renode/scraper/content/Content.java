@@ -64,10 +64,13 @@ public abstract class Content implements CodeGenerator {
         if (options.containsKey("Description")) {
             description = options.getString("Description").getValue();
         }
+
         String label = options.getString("Label").getValue();
 
         return switch (type) {
+            case "AssetId" -> new AssetIdContent(id, label, description, options.getString("AssetType").getValue(), Utils.getStringOrNull(options, "Default"), Utils.getIntegerOrNull(options, "Width"));
             case "Bool", "Checkbox" -> new CheckboxContent(id, label, description, Utils.getBooleanOrNull(options, "Default"));
+            case "CurveEditor" -> new CurveEditorContent(id, label, description, options.getString("PointsPin").getValue(), options.getString("PointNodeType").getValue(), options.getString("XField").getValue(), options.getString("YField").getValue());
             case "Enum" -> {
                 ArrayList<String> values = new ArrayList<>();
                 BsonArray valuesArray = Utils.getArrayOrNull(options, "Values");

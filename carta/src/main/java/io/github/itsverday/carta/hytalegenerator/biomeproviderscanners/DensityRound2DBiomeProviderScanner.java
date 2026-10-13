@@ -55,7 +55,7 @@ public class DensityRound2DBiomeProviderScanner extends BiomeProviderScanner {
     @Override
     public void generate(@NonNullDecl Context context) {
         rDensityContext.position = context.origin;
-        double radiusDouble = Normalizer.normalize(-1, 1, radiusMin, radiusMax, radius.process(rDensityContext));
+        double radiusDouble = Normalizer.normalize(-1, 1, radiusMin, radiusMax, radius.evaluate(rDensityContext));
         double radiusSquared = radiusDouble * radiusDouble;
 
         rControl.reset();

@@ -2,6 +2,8 @@ package io.github.itsverday.renode.scraper;
 
 import io.github.itsverday.renode.scraper.codegen.CodeGenerator;
 import io.github.itsverday.renode.scraper.codegen.CodeGeneratorUtils;
+import io.github.itsverday.renode.scraper.content.Content;
+import io.github.itsverday.renode.scraper.content.type.CurveEditorContent;
 import io.github.itsverday.renode.scraper.node.Node;
 import io.github.itsverday.renode.scraper.node.init.VariantNodeInit;
 import io.github.itsverday.renode.scraper.output.Output;
@@ -46,6 +48,7 @@ public class Workspace implements CodeGenerator {
         processNodeCategories();
         processNodeVariants();
         processRoots();
+        processNodeContent();
         processNodeOutputs();
     }
 
@@ -115,6 +118,20 @@ public class Workspace implements CodeGenerator {
                 }
 
                 if (root != null) roots.add(root);
+            }
+        }
+    }
+
+    private void processNodeContent() {
+        for (Node node: nodes) {
+            for (Content content: node.getContents()) {
+                if (content instanceof CurveEditorContent curveEditorContent) {
+                    for (Node pointNodeType: nodes) {
+                        if (curveEditorContent.getPointNodeType().equals(pointNodeType.getId())) {
+                            curveEditorContent.setPointNodeTypeResolved(pointNodeType);
+                        }
+                    }
+                }
             }
         }
     }

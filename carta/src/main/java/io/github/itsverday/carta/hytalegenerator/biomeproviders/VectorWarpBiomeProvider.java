@@ -31,7 +31,7 @@ public class VectorWarpBiomeProvider extends BiomeProvider {
     public int process(@NonNullDecl Context context) {
         rPosition.set(context.position);
         rDensityContext.position = rPosition;
-        double warp = warpField.process(rDensityContext);
+        double warp = warpField.evaluate(rDensityContext);
 
         rPosition.set(warpVector);
         rPosition.mul(warp);

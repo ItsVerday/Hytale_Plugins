@@ -8,6 +8,7 @@ import io.github.itsverday.renode.builder.root.VariantNodeRoot;
 import io.github.itsverday.renode.export.WorkspaceExporter;
 
 import javax.annotation.Nullable;
+import java.util.function.Supplier;
 
 public class Renode {
     public static NodeBuilder node(String id, String title) {
@@ -38,8 +39,20 @@ public class Renode {
         return new VariantNodeRoot(variant, name);
     }
 
+    public static NodeAssetIdContentBuilder assetIdContent(String id, String label, String assetType) {
+        return new NodeAssetIdContentBuilder().withId(id).withLabel(label).withAssetType(assetType);
+    }
+
     public static NodeCheckboxContentBuilder checkboxContent(String id, String label) {
         return new NodeCheckboxContentBuilder().withId(id).withLabel(label);
+    }
+
+    public static NodeCurveEditorContentBuilder curveEditorContent(String id, String label, String pointsPin, NodeBuilder pointNodeType, String xField, String yField) {
+        return new NodeCurveEditorContentBuilder().withId(id).withLabel(label).withPointsPin(pointsPin).withPointNodeType(pointNodeType).withXField(xField).withYField(yField);
+    }
+
+    public static NodeCurveEditorContentBuilder curveEditorContent(String id, String label, String pointsPin, Supplier<NodeBuilder> pointNodeType, String xField, String yField) {
+        return new NodeCurveEditorContentBuilder().withId(id).withLabel(label).withPointsPin(pointsPin).withPointNodeType(pointNodeType).withXField(xField).withYField(yField);
     }
 
     public static NodeEnumContentBuilder enumContent(String id, String label) {

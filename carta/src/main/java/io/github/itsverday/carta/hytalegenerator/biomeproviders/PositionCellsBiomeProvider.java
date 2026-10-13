@@ -75,7 +75,7 @@ public class PositionCellsBiomeProvider extends BiomeProvider {
         rPositionsContext.bounds.max.set(rBoundsMax);
         rPositionsContext.pipe = this::processPosition;
 
-        positions.generate(rPositionsContext);
+        positions.run(rPositionsContext);
         if (!rHasClosestPoint[0]) return fallback.process(context);
 
         PositionCellsBiomeProviderCellType cellTypeHere = cellTypes.getFirst();
@@ -104,7 +104,7 @@ public class PositionCellsBiomeProvider extends BiomeProvider {
             rDensityContext.position.set(providedPoint);
             rDensityContext.position.add(rSamplePoint);
             rDensityContext.densityAnchor = providedPoint;
-            newDistance += Normalizer.normalize(-1, 1, distanceWarpMin, distanceWarpMax, distanceWarpField.process(rDensityContext));
+            newDistance += Normalizer.normalize(-1, 1, distanceWarpMin, distanceWarpMax, distanceWarpField.evaluate(rDensityContext));
         }
 
         if (newDistance < maxDistance && newDistance < rMinDistance[0]) {

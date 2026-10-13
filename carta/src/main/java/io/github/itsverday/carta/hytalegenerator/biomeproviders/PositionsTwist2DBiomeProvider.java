@@ -55,7 +55,7 @@ public class PositionsTwist2DBiomeProvider extends BiomeProvider {
         rPositionsContext.bounds.min.set(rBoundsMin);
         rPositionsContext.bounds.max.set(rBoundsMax);
         rPositionsContext.pipe = this::processPosition;
-        positions.generate(rPositionsContext);
+        positions.run(rPositionsContext);
         if (rWarpVectors.getSoftSize() == 0) return input.process(context);
         if (rWarpVectors.getSoftSize() == 1) {
             rSamplePoint.add(rWarpVectors.get(0));

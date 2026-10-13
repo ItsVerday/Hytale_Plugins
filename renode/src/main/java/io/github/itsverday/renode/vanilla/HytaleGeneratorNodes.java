@@ -17,8 +17,8 @@ public class HytaleGeneratorNodes {
     private static final List<NodeCategory> categories = new ArrayList<>();
     private static final List<AbstractNodeRoot> roots = new ArrayList<>();
 
-    public static final NodeSmallStringContentBuilder CONTENT_EXPORT_AS = Renode.smallStringContent("ExportAs", "ExportAs").withDefaultValue("").withWidth(250);
-    public static final NodeCheckboxContentBuilder CONTENT_SKIP = Renode.checkboxContent("Skip", "Skip").withDefaultValue(false);
+    public static final NodeSmallStringContentBuilder CONTENT_EXPORT_AS = Renode.smallStringContent("ExportAs", "ExportAs").withDefaultValue("").withWidth(250).withDescription("Expores this node under this name, so an Imported node can reference it.");
+    public static final NodeCheckboxContentBuilder CONTENT_SKIP = Renode.checkboxContent("Skip", "Skip").withDefaultValue(false).withDescription("Skips this node.");
 
     public static final NodeCategory CATEGORY_ASSIGNMENTS = addCategory(Renode.category("Assignments", "Aqua"));
     public static final NodeCategory CATEGORY_BIOME = addCategory(Renode.category("Biome", "Grey"));
@@ -28,21 +28,21 @@ public class HytaleGeneratorNodes {
     public static final NodeCategory CATEGORY_DENSITY = addCategory(Renode.category("Density", "Purple"));
     public static final NodeCategory CATEGORY_DENSITY_POSITIONS_CELL_NOISE = addCategory(Renode.category("PositionsCellNoise", "DarkPink"));
     public static final NodeCategory CATEGORY_DIRECTIONALITY = addCategory(Renode.category("Directionality", "Magenta"));
-    public static final NodeCategory CATEGORY_ENVIRONMENT_PROVIDERS = addCategory(Renode.category("EnvironmentProvider", "110,63,16"));
+    public static final NodeCategory CATEGORY_ENVIRONMENT_PROVIDERS = addCategory(Renode.category("EnvironmentProvider", "Brown"));
     public static final NodeCategory CATEGORY_GRAPH = addCategory(Renode.category("Graph", "Pink"));
     public static final NodeCategory CATEGORY_GRAPH_CONTENT_PREDICATE = addCategory(Renode.category("ContentPredicate", "Pink"));
     public static final NodeCategory CATEGORY_GRAPH_CONTENT_SUPPLIER = addCategory(Renode.category("ContentSupplier", "Pink"));
     public static final NodeCategory CATEGORY_MATERIAL = addCategory(Renode.category("Material", "Yellow"));
-    public static final NodeCategory CATEGORY_MATERIAL_PROVIDERS = addCategory(Renode.category("MaterialProvider", "110,63,16"));
+    public static final NodeCategory CATEGORY_MATERIAL_PROVIDERS = addCategory(Renode.category("MaterialProvider", "Brown"));
     public static final NodeCategory CATEGORY_MATERIAL_PROVIDER_SPACE_AND_DEPTH = addCategory(Renode.category("SpaceAndDepth MaterialProvider", "Orange"));
     public static final NodeCategory CATEGORY_PATTERNS = addCategory(Renode.category("Pattern", "Pink"));
-    public static final NodeCategory CATEGORY_POINT_GENERATORS = addCategory(Renode.category("PointGenerator", "255,0,0"));
+    public static final NodeCategory CATEGORY_POINT_GENERATORS = addCategory(Renode.category("PointGenerator", "BrightRed"));
     public static final NodeCategory CATEGORY_POSITIONS = addCategory(Renode.category("Positions", "Blue"));
     public static final NodeCategory CATEGORY_PROPS = addCategory(Renode.category("Prop", "Green"));
     public static final NodeCategory CATEGORY_PROP_DISTRIBUTIONS = addCategory(Renode.category("Prop Distribution", "Aqua"));
     public static final NodeCategory CATEGORY_RANGE = addCategory(Renode.category("Range", "Orange"));
     public static final NodeCategory CATEGORY_SCANNERS = addCategory(Renode.category("Scanner", "LightPurple"));
-    public static final NodeCategory CATEGORY_TINT_PROVIDERS = addCategory(Renode.category("TintProvider", "110,63,16"));
+    public static final NodeCategory CATEGORY_TINT_PROVIDERS = addCategory(Renode.category("TintProvider", "Brown"));
     public static final NodeCategory CATEGORY_VECTORS = addCategory(Renode.category("Vectors", "Orange"));
     public static final NodeCategory CATEGORY_VECTOR_PROVIDERS = addCategory(Renode.category("VectorProviders", "Green"));
 
@@ -51,7 +51,7 @@ public class HytaleGeneratorNodes {
     public static final NodeVariantClass VARIANT_DENSITY = addVariant(Renode.variant("Density", "Purple"));
     public static final NodeVariantClass VARIANT_DENSITY_POSITIONS_CELL_NOISE_RETURN_TYPES = addVariant(Renode.variant("PositionsCellNoiseReturnTypes", "DarkPink"));
     public static final NodeVariantClass VARIANT_DIRECTIONALITY = addVariant(Renode.variant("Directionality", "Magenta"));
-    public static final NodeVariantClass VARIANT_ENVIRONMENT_PROVIDERS = addVariant(Renode.variant("EnvironmentProviders", "110,63,16"));
+    public static final NodeVariantClass VARIANT_ENVIRONMENT_PROVIDERS = addVariant(Renode.variant("EnvironmentProviders", "Brown"));
     public static final NodeVariantClass VARIANT_GRAPH_CONTENT_PREDICATES = addVariant(Renode.variant("GraphContentPredicate", "Pink"));
     public static final NodeVariantClass VARIANT_GRAPH_CONTENT_SUPPLIERS = addVariant(Renode.variant("GraphContentSuppliers", "Pink"));
     public static final NodeVariantClass VARIANT_GRAPH_EDGE_ACTIONS = addVariant(Renode.variant("GraphEdgeActions", "Pink"));
@@ -59,16 +59,16 @@ public class HytaleGeneratorNodes {
     public static final NodeVariantClass VARIANT_GRAPH_NODE_ACTIONS = addVariant(Renode.variant("GraphNodeActions", "Pink"));
     public static final NodeVariantClass VARIANT_GRAPH_NODE_SELECTORS = addVariant(Renode.variant("GraphNodeSelectors", "Pink"));
     public static final NodeVariantClass VARIANT_GRAPH_PASSES = addVariant(Renode.variant("GraphPasses", "Pink"));
-    public static final NodeVariantClass VARIANT_MATERIAL_PROVIDERS = addVariant(Renode.variant("MaterialProviders", "110,63,16"));
+    public static final NodeVariantClass VARIANT_MATERIAL_PROVIDERS = addVariant(Renode.variant("MaterialProviders", "Brown"));
     public static final NodeVariantClass VARIANT_MATERIAL_PROVIDER_SPACE_AND_DEPTH_CONDITIONS = addVariant(Renode.variant("SpaceAndDepthConditions", "Orange"));
     public static final NodeVariantClass VARIANT_MATERIAL_PROVIDER_SPACE_AND_DEPTH_LAYERS = addVariant(Renode.variant("SpaceAndDepthLayers", "Orange"));
     public static final NodeVariantClass VARIANT_PATTERNS = addVariant(Renode.variant("Patterns", "Pink"));
-    public static final NodeVariantClass VARIANT_POINT_GENERATORS = addVariant(Renode.variant("PointGenerators", "255,0,0"));
+    public static final NodeVariantClass VARIANT_POINT_GENERATORS = addVariant(Renode.variant("PointGenerators", "BrightRed"));
     public static final NodeVariantClass VARIANT_POSITIONS = addVariant(Renode.variant("Positions", "Blue"));
     public static final NodeVariantClass VARIANT_PROPS = addVariant(Renode.variant("Props", "Green"));
     public static final NodeVariantClass VARIANT_PROP_DISTRIBUTIONS = addVariant(Renode.variant("PropDistributions", "Aqua"));
     public static final NodeVariantClass VARIANT_SCANNERS = addVariant(Renode.variant("Scanners", "LightPurple"));
-    public static final NodeVariantClass VARIANT_TINT_PROVIDERS = addVariant(Renode.variant("TintProviders", "110,63,16"));
+    public static final NodeVariantClass VARIANT_TINT_PROVIDERS = addVariant(Renode.variant("TintProviders", "Brown"));
     public static final NodeVariantClass VARIANT_VECTOR_PROVIDERS = addVariant(Renode.variant("VectorProviders", "Green"));
 
     public static final NodeBuilder NODE_ASSIGNMENTS_CONSTANT = addNode(VARIANT_ASSIGNMENTS.variantNode("Constant", "Constant.Assignments", "Constant Assignments"))
@@ -205,6 +205,7 @@ public class HytaleGeneratorNodes {
     public static final NodeBuilder NODE_CURVE_MANUAL = addNode(VARIANT_CURVES.variantNode("Manual", "Manual.Curve", "Manual Curve"))
             .withDescription("You can plot points that connect with lines to create the curve. The points are connected with straight lines. The function is constant before the first point and after the last point.")
             .addContent(CONTENT_EXPORT_AS)
+            .addContent(Renode.curveEditorContent("CurveEditorView", "Curve", "Points", () -> HytaleGeneratorNodes.NODE_CURVE_MANUAL_POINT, "In", "Out").withDescription("Preview the connected curve points."))
             .addNodeOutput("Points", "Points", true, () -> HytaleGeneratorNodes.NODE_CURVE_MANUAL_POINT, "Curve points.")
             .addCategory(CATEGORY_CURVES);
     public static final NodeBuilder NODE_CURVE_MANUAL_POINT = addNode(Renode.node("CurvePoint.Curve", "Curve Point"))
@@ -296,7 +297,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_AND = addNode(VARIANT_DENSITY.variantNode("And", "And.Density", "And Density"))
-            .withDescription("Returns 1.0 if all inputs are non-zero, otherwise 0.0.")
+            .withDescription("Each input is read as a boolean. A value of 0 is false and any other value is true.\nThe output is 1 if every input is non-zero, otherwise 0. If no inputs are provided the output is 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "[0, infinite): Inputs.")
             .addCategory(CATEGORY_DENSITY);
@@ -330,27 +331,27 @@ public class HytaleGeneratorNodes {
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addContent(Renode.floatContent("Limit", "Limit").withDefaultValue(0.0).withWidth(100))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_CELL_NOISE_2D = addNode(VARIANT_DENSITY.variantNode("CellNoise2D", "CellNoise2D.Density", "CellNoise2D Density"))
-            .withDescription("2D Voronoi noise.")
+            .withDescription("Outputs a value in the range [-1, 1] from a 2D Voronoi cell noise field that varies on the x/z plane.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Jitter", "Jitter").withDefaultValue(0.3).withWidth(100))
-            .addContent(Renode.enumContent("CellType", "CellType").withValues("CellValue", "Distance", "Distance2", "Distance2Add", "Distance2Sub", "Distance2Mul", "Distance2Div").withDefaultValue("CellValue").withWidth(150))
-            .addContent(Renode.floatContent("ScaleX", "ScaleX").withDefaultValue(50.0).withWidth(100))
-            .addContent(Renode.floatContent("ScaleZ", "ScaleZ").withDefaultValue(50.0).withWidth(100))
-            .addContent(Renode.integerSliderContent("Octaves", "Octaves", 0, 20, 1).withDefaultValue(1).withWidth(150))
+            .addContent(Renode.floatContent("Jitter", "Jitter").withDefaultValue(0.3).withWidth(100).withDescription("Moves each cell center away from a regular grid. A good starting value would be 0.3. A value of 0 keeps the cells on a grid. Greater values make the cells more irregular."))
+            .addContent(Renode.enumContent("CellType", "CellType").withValues("CellValue", "Distance", "Distance2", "Distance2Add", "Distance2Sub", "Distance2Mul", "Distance2Div").withDefaultValue("CellValue").withWidth(150).withDescription("- CellValue: constant value inside each cell.\n- Distance: distance to the closest cell center.\n- Distance2: distance to the second closest cell center.\n- Distance2Add: sum of the two closest distances.\n- Distance2Sub: difference between the two closest distances.\n- Distance2Mul: product of the two closest distances.\n- Distance2Div: closest distance divided by the second closest."))
+            .addContent(Renode.floatContent("ScaleX", "ScaleX").withDefaultValue(50.0).withWidth(100).withDescription("Represents the field's period distance in blocks on the X axis. Greater values stretch the noise field outward. A good starting value would be 50."))
+            .addContent(Renode.floatContent("ScaleZ", "ScaleZ").withDefaultValue(50.0).withWidth(100).withDescription("Represents the field's period distance in blocks on the Z axis. Greater values stretch the noise field outward. A good starting value would be 50."))
+            .addContent(Renode.integerSliderContent("Octaves", "Octaves", 0, 20, 1).withDefaultValue(1).withWidth(150).withDescription("Greater values result in more detail. A good starting value would be 1."))
             .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_CELL_NOISE_3D = addNode(VARIANT_DENSITY.variantNode("CellNoise3D", "CellNoise3D.Density", "CellNoise3D Density"))
-            .withDescription("3D Voronoi noise.")
+            .withDescription("Outputs a value in the range [-1, 1] from a 3D Voronoi cell noise field that varies on the x/y/z space.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Jitter", "Jitter").withDefaultValue(0.3).withWidth(100))
-            .addContent(Renode.enumContent("CellType", "CellType").withValues("CellValue", "Distance", "Distance2", "Distance2Add", "Distance2Sub", "Distance2Mul", "Distance2Div").withDefaultValue("CellValue").withWidth(150))
-            .addContent(Renode.floatContent("ScaleX", "ScaleX").withDefaultValue(50.0).withWidth(100))
-            .addContent(Renode.floatContent("ScaleY", "ScaleY").withDefaultValue(50.0).withWidth(100))
-            .addContent(Renode.floatContent("ScaleZ", "ScaleZ").withDefaultValue(50.0).withWidth(100))
-            .addContent(Renode.integerSliderContent("Octaves", "Octaves", 0, 20, 1).withDefaultValue(1).withWidth(150))
+            .addContent(Renode.floatContent("Jitter", "Jitter").withDefaultValue(0.3).withWidth(100).withDescription("Moves each cell center away from a regular grid. A good starting value would be 0.3. A value of 0 keeps the cells on a grid. Greater values make the cells more irregular."))
+            .addContent(Renode.enumContent("CellType", "CellType").withValues("CellValue", "Distance", "Distance2", "Distance2Add", "Distance2Sub", "Distance2Mul", "Distance2Div").withDefaultValue("CellValue").withWidth(150).withDescription("- CellValue: constant value inside each cell.\n- Distance: distance to the closest cell center.\n- Distance2: distance to the second closest cell center.\n- Distance2Add: sum of the two closest distances.\n- Distance2Sub: difference between the two closest distances.\n- Distance2Mul: product of the two closest distances.\n- Distance2Div: closest distance divided by the second closest."))
+            .addContent(Renode.floatContent("ScaleX", "ScaleX").withDefaultValue(50.0).withWidth(100).withDescription("Represents the field's period distance in blocks on the X axis. Greater values stretch the noise field outward. A good starting value would be 50."))
+            .addContent(Renode.floatContent("ScaleY", "ScaleY").withDefaultValue(50.0).withWidth(100).withDescription("Represents the field's period distance in blocks on the Y axis. Greater values stretch the noise field outward. A good starting value would be 50."))
+            .addContent(Renode.floatContent("ScaleZ", "ScaleZ").withDefaultValue(50.0).withWidth(100).withDescription("Represents the field's period distance in blocks on the Z axis. Greater values stretch the noise field outward. A good starting value would be 50."))
+            .addContent(Renode.integerSliderContent("Octaves", "Octaves", 0, 20, 1).withDefaultValue(1).withWidth(150).withDescription("Greater values result in more detail. A good starting value would be 1."))
             .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_CELL_WALL_DISTANCE = addNode(VARIANT_DENSITY.variantNode("CellWallDistance", "CellWallDistance.Density", "[EXPERIMENTAL] CellWallDistance Density"))
@@ -364,7 +365,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Density to be clamped.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_COMPARATOR = addNode(VARIANT_DENSITY.variantNode("Comparator", "Comparator.Density", "Comparator Density"))
-            .withDescription("Compares two input values and returns -1 if the first input is smaller, 0 if they are equal, or 1 if the first input is greater.")
+            .withDescription("Compares the two inputs. The output is -1 if the first input is smaller, 0 if both are equal, and 1 if the first input is greater.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input A.\n1: Input B.")
             .addCategory(CATEGORY_DENSITY);
@@ -421,9 +422,9 @@ public class HytaleGeneratorNodes {
             .addNodeOutput("NewYAxis", "NewYAxis", false, () -> HytaleGeneratorNodes.NODE_POINT_3D, "Let's you rotate the field around its origin.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_EQUAL = addNode(VARIANT_DENSITY.variantNode("Equal", "Equal.Density", "Equal Density"))
-            .withDescription("Returns 1.0 if the two inputs are equal within Epsilon, otherwise 0.0. Set Epsilon to 0 for an exact comparison.")
+            .withDescription("The output is 1 if the two inputs are equal, otherwise 0. Two inputs count as equal when the difference between them is at most the Epsilon. Use an Epsilon of 0 for an exact comparison.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Epsilon", "Epsilon").withDefaultValue(0.0).withWidth(100).withDescription("Maximum allowed difference between the two inputs."))
+            .addContent(Renode.floatContent("Epsilon", "Epsilon").withDefaultValue(0.0).withWidth(100).withDescription("Decimal number of 0 or more. The greatest difference between the two inputs that still counts as equal."))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input A.\n1: Input B.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_EXPORTED = addNode(VARIANT_DENSITY.variantNode("Exported", "Exported.Density", "[EXPERIMENTAL] Exported Density"))
@@ -448,14 +449,14 @@ public class HytaleGeneratorNodes {
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addContent(Renode.floatContent("Limit", "Limit").withDefaultValue(0.0).withWidth(100))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_GRADIENT = addNode(VARIANT_DENSITY.variantNode("Gradient", "Gradient.Density", "[DEPRECATED] Gradient Density"))
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addContent(Renode.floatContent("SampleRange", "SampleRange").withDefaultValue(1.0).withWidth(70))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
             .addNodeOutput("Axis", "Axis", false, () -> HytaleGeneratorNodes.NODE_POINT_3D)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_GRADIENT_WARP = addNode(VARIANT_DENSITY.variantNode("GradientWarp", "GradientWarp.Density", "GradientWarp Density"))
             .withDescription("Warps the first input based on the gradient of the second input Density field. This works similar to the legacy warping functionality, except it also works in 3D and you can plug any Density field into it.\nThis implementation is relatively expensive because it calculates the gradient of the input Density field. I recommend optimizing the use of this node by isolating and minimizing its use space. A fast version of this node can be implemented which would let you only use Simplex noise to warp. This will depend on the feedback and priorities.\nThis node incorporates a Cache2D so you don't need to use a Cache2D node on its output.")
@@ -466,23 +467,24 @@ public class HytaleGeneratorNodes {
             .addContent(Renode.floatContent("YFor2D", "Y for 2D").withDefaultValue(0.0).withDescription("Default is 0. The Y coordinate used from the input to calculate the gradient from."))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Density that is warped.\n1: Warping source.")
             .addCategory(CATEGORY_DENSITY);
-    public static final NodeBuilder NODE_DENSITY_GRAPH = addNode(VARIANT_DENSITY.variantNode("Graph", "Graph.Density", "[DEV] Graph Density"))
+    public static final NodeBuilder NODE_DENSITY_GRAPH = addNode(VARIANT_DENSITY.variantNode("Graph", "Graph.Density", "Graph Density"))
+            .withDescription("Reads a Density from the content that graph nodes carry. Every entry within Range of the sampled position contributes, and entries closer to that position get more weight.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("BackgroundValue", "BackgroundValue").withDefaultValue(0.0).withWidth(100))
-            .addContent(Renode.floatContent("TransitionSlope", "TransitionSlope").withDefaultValue(2.5).withWidth(100))
-            .addContent(Renode.floatContent("TransitionOffset", "TransitionOffset").withDefaultValue(0.0).withWidth(100))
-            .addContent(Renode.floatContent("TransitionSmooth", "TransitionSmooth").withDefaultValue(0.2).withWidth(100).withDescription("Smoothing width for the distance-based transition. Must be >= 0."))
-            .addContent(Renode.integerContent("QueryBufferCapacity", "QueryBufferCapacity").withDefaultValue(3).withWidth(100).withDescription("Maximum number of cached query columns. Must be >= 1."))
-            .addNodeOutput("GraphGenerator", "GraphGenerator", false, () -> HytaleGeneratorNodes.NODE_GRAPH_GENERATOR)
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The Density layer to read from each node's content. The match is exact and case sensitive. A layer that matches nothing returns the BackgroundValue everywhere."))
+            .addContent(Renode.floatContent("BackgroundValue", "BackgroundValue").withDefaultValue(0.0).withWidth(100).withDescription("Sets the value returned where no content is in range."))
+            .addContent(Renode.floatContent("TransitionSlope", "TransitionSlope").withDefaultValue(2.5).withWidth(100).withDescription("Sets how steeply the weight rises between the edge of the Range and the node. A safe starting value is 2.5."))
+            .addContent(Renode.floatContent("TransitionOffset", "TransitionOffset").withDefaultValue(0.0).withWidth(100).withDescription("Shifts the weight curve. Positive values move it toward the node. A safe starting value is 0."))
+            .addContent(Renode.floatContent("TransitionSmooth", "TransitionSmooth").withDefaultValue(0.2).withWidth(100).withDescription("Softens the curve where the weight reaches its maximum. Must be >= 0. A safe starting value is 0.2."))
+            .addContent(Renode.integerContent("QueryBufferCapacity", "QueryBufferCapacity").withDefaultValue(3).withWidth(100).withDescription("Maximum number of cached query columns. Must be >= 1. A safe starting value is 3."))
+            .addNodeOutput("GraphGenerator", "GraphGenerator", false, () -> HytaleGeneratorNodes.NODE_GRAPH_GENERATOR, "The graph to read.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_GREATER_OR_EQUAL = addNode(VARIANT_DENSITY.variantNode("GreaterOrEqual", "GreaterOrEqual.Density", "GreaterOrEqual Density"))
-            .withDescription("Returns 1.0 if the first input is greater than or equal to the second input, otherwise 0.0.")
+            .withDescription("The output is 1 if the first input is greater than or equal to the second input, otherwise 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input A.\n1: Input B.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_GREATER_THAN = addNode(VARIANT_DENSITY.variantNode("GreaterThan", "GreaterThan.Density", "GreaterThan Density"))
-            .withDescription("Returns 1.0 if the first input is greater than the second input, otherwise 0.0.")
+            .withDescription("The output is 1 if the first input is greater than the second input, otherwise 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input A.\n1: Input B.")
             .addCategory(CATEGORY_DENSITY);
@@ -497,12 +499,12 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_LESS_OR_EQUAL = addNode(VARIANT_DENSITY.variantNode("LessOrEqual", "LessOrEqual.Density", "LessOrEqual Density"))
-            .withDescription("Returns 1.0 if the first input is less than or equal to the second input, otherwise 0.0.")
+            .withDescription("The output is 1 if the first input is less than or equal to the second input, otherwise 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input A.\n1: Input B.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_LESS_THAN = addNode(VARIANT_DENSITY.variantNode("LessThan", "LessThan.Density", "LessThan Density"))
-            .withDescription("Returns 1.0 if the first input is less than the second input, otherwise 0.0.")
+            .withDescription("The output is 1 if the first input is less than the second input, otherwise 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input A.\n1: Input B.")
             .addCategory(CATEGORY_DENSITY);
@@ -538,7 +540,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "[0, infinite): Inputs.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_NOR = addNode(VARIANT_DENSITY.variantNode("Nor", "Nor.Density", "Nor Density"))
-            .withDescription("Returns 1.0 if no input is non-zero, otherwise 0.0.")
+            .withDescription("Each input is read as a boolean. A value of 0 is false and any other value is true.\\nThe output is 1 if every input is 0, otherwise 0. This is the inverse of the Or node. If no inputs are provided the output is 1.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "[0, infinite): Inputs.")
             .addCategory(CATEGORY_DENSITY);
@@ -552,7 +554,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_NOT = addNode(VARIANT_DENSITY.variantNode("Not", "Not.Density", "Not Density"))
-            .withDescription("Returns 1.0 if the input is zero, otherwise 0.0.")
+            .withDescription("The input is read as a boolean. A value of 0 is false and any other value is true.\nThe output is 1 if the input is 0, otherwise 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input.")
             .addCategory(CATEGORY_DENSITY);
@@ -560,16 +562,16 @@ public class HytaleGeneratorNodes {
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
             .addNodeOutput("FunctionForY", "FunctionForY", false, () -> HytaleGeneratorNodes.NODE_FUNCTION_FOR_Y)
-            .withColorOverride("255,00,00")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_OFFSET_CONSTANT = addNode(VARIANT_DENSITY.variantNode("OffsetConstant", "OffsetConstant.Density", "[DEPRECATED] OffsetConstant Density"))
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addContent(Renode.floatContent("Value", "Value").withDefaultValue(0.0).withWidth(100))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
-            .withColorOverride("255,00,00")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_OR = addNode(VARIANT_DENSITY.variantNode("Or", "Or.Density", "Or Density"))
-            .withDescription("Returns 1.0 if any input is non-zero, otherwise 0.0.")
+            .withDescription("Each input is read as a boolean. A value of 0 is false and any other value is true.\\nThe output is 1 if at least one input is non-zero, otherwise 0. If no inputs are provided the output is 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "[0, infinite): Inputs.")
             .addCategory(CATEGORY_DENSITY);
@@ -677,7 +679,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Input.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_SELECTOR = addNode(VARIANT_DENSITY.variantNode("Selector", "Selector.Density", "Selector Density"))
-            .withDescription("Selects between two density fields based on a condition. If the condition is non-zero, the Then input is returned. Otherwise the Else input is returned.")
+            .withDescription("Outputs one of two Density fields based on a condition input. If the condition is non-zero, the output is the Then input. Otherwise the output is the Else input. Only the selected branch is calculated, so you can use this node to skip expensive fields.\nThis node needs all three inputs. If you provide a different number of inputs, the output is 0.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "0: Then.\n1: Else.\n2: Condition.")
             .addCategory(CATEGORY_DENSITY);
@@ -721,7 +723,7 @@ public class HytaleGeneratorNodes {
             .addContent(Renode.floatContent("Range", "Value").withDefaultValue(0.2).withWidth(100))
             .addContent(Renode.floatContent("Limit", "Value").withDefaultValue(0.0).withWidth(100))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_SMOOTH_CLAMP = addNode(VARIANT_DENSITY.variantNode("SmoothClamp", "SmoothClamp.Density", "SmoothClamp Density"))
             .withDescription("This node ensures that the output is within the provided range which is defined by the two wall parameters. The concept is similar to the Clamp node documented above, but the output is smoothed to the limits by the provided range value.")
@@ -736,7 +738,7 @@ public class HytaleGeneratorNodes {
             .addContent(Renode.floatContent("Range", "Value").withDefaultValue(0.2).withWidth(100))
             .addContent(Renode.floatContent("Limit", "Value").withDefaultValue(0.0).withWidth(100))
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_SMOOTH_MAX = addNode(VARIANT_DENSITY.variantNode("SmoothMax", "SmoothMax.Density", "SmoothMax Density"))
             .withDescription("The output is a smoothed maximum between the two inputs.")
@@ -795,11 +797,12 @@ public class HytaleGeneratorNodes {
             .addNodeOutput("WarpVector", "WarpVector", false, () -> HytaleGeneratorNodes.NODE_POINT_3D, "Can be any vector. This determines the direction in which the warping happens. Negative values of the factor or the warping density field will result in flipped warping direction.")
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_WHITE_NOISE = addNode(VARIANT_DENSITY.variantNode("WhiteNoise", "WhiteNoise.Density", "WhiteNoise Density"))
+            .withDescription("Outputs a value in the range [-1, 1] from a 3D white noise field that varies on the x/y/z space. Adjacent samples are uncorrelated. Each coordinate gets an independent random value.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
             .addCategory(CATEGORY_DENSITY);
     public static final NodeBuilder NODE_DENSITY_XOR = addNode(VARIANT_DENSITY.variantNode("Xor", "Xor.Density", "Xor Density"))
-            .withDescription("Returns 1.0 if an odd number of inputs are non-zero, otherwise 0.0.")
+            .withDescription("Each input is read as a boolean. A value of 0 is false and any other value is true.\\nThe output is 1 if an odd number of inputs are non-zero, otherwise 0. With two inputs this gives 1 when exactly one of them is non-zero.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("Inputs", "Inputs", true, VARIANT_DENSITY, "[0, infinite): Inputs.")
             .addCategory(CATEGORY_DENSITY);
@@ -878,337 +881,391 @@ public class HytaleGeneratorNodes {
             .withColorOverride("Orange")
             .addCategory(CATEGORY_ENVIRONMENT_PROVIDERS);
     public static final NodeBuilder NODE_FUNCTION_FOR_Y = addNode(Renode.node("FunctionForY", "FunctionForY"))
+            .addContent(Renode.curveEditorContent("CurveEditorView", "Function", "Points", () -> HytaleGeneratorNodes.NODE_FUNCTION_FOR_Y_POINT, "Y", "Out"))
             .addNodeOutput("Points", "Points", true, () -> HytaleGeneratorNodes.NODE_FUNCTION_FOR_Y_POINT)
             .withColorOverride("Orange");
     public static final NodeBuilder NODE_FUNCTION_FOR_Y_POINT = addNode(Renode.node("Point.FunctionForY", "FunctionForY Point"))
             .addContent(Renode.floatContent("Y", "Y").withDefaultValue(0.0).withWidth(100))
             .addContent(Renode.floatContent("Out", "Out").withDefaultValue(0.0).withWidth(100))
             .withColorOverride("Orange");
-    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_AND = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("And", "And.ContentPredicate", "[DEV] And ContentPredicate"))
-            .withDescription("Returns true only if all child predicates pass for the node's content set.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_AND = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("And", "And.ContentPredicate", "And ContentPredicate"))
+            .withDescription("Passes only if every child ContentPredicate passes. It stops at the first child that fails, so put the cheapest children first.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("ContentPredicates", "ContentPredicates", true, VARIANT_GRAPH_CONTENT_PREDICATES)
+            .addVariantOutput("ContentPredicates", "ContentPredicates", true, VARIANT_GRAPH_CONTENT_PREDICATES, "The child predicates. All of them must pass.")
             .addCategory(CATEGORY_GRAPH_CONTENT_PREDICATE);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_CONSTANT = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Constant", "Constant.ContentPredicate", "[DEV] Constant ContentPredicate"))
-            .withDescription("Always returns the configured boolean value for any content set.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_CONSTANT = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Constant", "Constant.ContentPredicate", "Constant ContentPredicate"))
+            .withDescription("Always returns the Value, whatever Content the node carries.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.checkboxContent("Value", "Value").withDefaultValue(true))
+            .addContent(Renode.checkboxContent("Value", "Value").withDefaultValue(true).withDescription("The result this predicate always returns."))
             .addCategory(CATEGORY_GRAPH_CONTENT_PREDICATE);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_IMPORTED = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Imported", "Imported.ContentPredicate", "[DEV] Imported ContentPredicate"))
+    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_IMPORTED = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Imported", "Imported.ContentPredicate", "Imported ContentPredicate"))
             .withDescription("Imports an exported ContentPredicate.")
             .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported ContentPredicate name."))
             .addContent(CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH_CONTENT_PREDICATE);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_NOT = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Not", "Not.ContentPredicate", "[DEV] Not ContentPredicate"))
-            .withDescription("Inverts the result of the child predicate for the node's content set.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_NOT = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Not", "Not.ContentPredicate", "Not ContentPredicate"))
+            .withDescription("Inverts the result of the child ContentPredicate.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("ContentPredicate", "ContentPredicate", false, VARIANT_GRAPH_CONTENT_PREDICATES)
+            .addVariantOutput("ContentPredicate", "ContentPredicate", false, VARIANT_GRAPH_CONTENT_PREDICATES, "The child predicate to invert.")
             .addCategory(CATEGORY_GRAPH_CONTENT_PREDICATE);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_OR = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Or", "Or.ContentPredicate", "[DEV] Or ContentPredicate"))
-            .withDescription("Returns true if any child predicate passes for the node's content set.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_OR = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Or", "Or.ContentPredicate", "Or ContentPredicate"))
+            .withDescription("Passes if any child ContentPredicate passes. It stops at the first child that passes, so put the cheapest children first.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("ContentPredicates", "ContentPredicates", true, VARIANT_GRAPH_CONTENT_PREDICATES)
+            .addVariantOutput("ContentPredicates", "ContentPredicates", true, VARIANT_GRAPH_CONTENT_PREDICATES, "The child predicates. Any one of them passing is enough.")
             .addCategory(CATEGORY_GRAPH_CONTENT_PREDICATE);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_SET = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Set", "Set.ContentPredicate", "[DEV] Set ContentPredicate"))
-            .withDescription("Returns true when any configured tag is present in the node's content set.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_PREDICATE_SET = addNode(VARIANT_GRAPH_CONTENT_PREDICATES.variantNode("Set", "Set.ContentPredicate", "Set ContentPredicate"))
+            .withDescription("Passes when the node's Content carries any one of the ContentTags.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.listContent("ContentTags", "ContentTags", "String").withWidth(350))
+            .addContent(Renode.listContent("ContentTags", "ContentTags", "String").withWidth(350).withDescription("The tags to look for. A node carries its tags on its NodeContent."))
             .addCategory(CATEGORY_GRAPH_CONTENT_PREDICATE);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_CONSTANT = addNode(VARIANT_GRAPH_CONTENT_SUPPLIERS.variantNode("Constant", "Constant.ContentSupplier", "[DEV] Constant ContentSupplier"))
-            .withDescription("Always assigns the configured node content.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_CONSTANT = addNode(VARIANT_GRAPH_CONTENT_SUPPLIERS.variantNode("Constant", "Constant.ContentSupplier", "Constant ContentSupplier"))
+            .withDescription("Always supplies the same Content.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addNodeOutput("Content", "Content", false, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT)
+            .addNodeOutput("Content", "Content", false, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT, "The Content to supply.")
             .addCategory(CATEGORY_GRAPH_CONTENT_SUPPLIER);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_IMPORTED = addNode(VARIANT_GRAPH_CONTENT_SUPPLIERS.variantNode("Imported", "Imported.ContentSupplier", "[DEV] Imported ContentSupplier"))
+    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_IMPORTED = addNode(VARIANT_GRAPH_CONTENT_SUPPLIERS.variantNode("Imported", "Imported.ContentSupplier", "Imported ContentSupplier"))
             .withDescription("Imports an exported ContentSupplier.")
             .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported ContentSupplier name."))
             .addContent(CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH_CONTENT_SUPPLIER);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_WEIGHTED = addNode(VARIANT_GRAPH_CONTENT_SUPPLIERS.variantNode("Weighted", "Weighted.ContentSupplier", "[DEV] Weighted ContentSupplier"))
-            .withDescription("Randomly assigns content from a weighted list of suppliers.")
+    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_WEIGHTED = addNode(VARIANT_GRAPH_CONTENT_SUPPLIERS.variantNode("Weighted", "Weighted.ContentSupplier", "Weighted ContentSupplier"))
+            .withDescription("Picks the Content from a weighted list of ContentSuppliers.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addNodeOutput("Entries", "Entries", true, () -> HytaleGeneratorNodes.NODE_GRAPH_CONTENT_SUPPLIER_WEIGHTED_WEIGHT)
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which entry is picked."))
+            .addNodeOutput("Entries", "Entries", true, () -> HytaleGeneratorNodes.NODE_GRAPH_CONTENT_SUPPLIER_WEIGHTED_WEIGHT, "The weighted list of ContentSuppliers.")
             .addCategory(CATEGORY_GRAPH_CONTENT_SUPPLIER);
-    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_WEIGHTED_WEIGHT = addNode(Renode.node("Entry.Weighted.ContentSupplier", "[DEV] Entry | Weighted ContentSupplier"))
-            .addContent(Renode.floatContent("Weight", "Weight").withDefaultValue(1.0).withWidth(150))
-            .addVariantOutput("ContentSupplier", "ContentSupplier", false, VARIANT_GRAPH_CONTENT_SUPPLIERS)
+    public static final NodeBuilder NODE_GRAPH_CONTENT_SUPPLIER_WEIGHTED_WEIGHT = addNode(Renode.node("Entry.Weighted.ContentSupplier", "Entry | Weighted ContentSupplier"))
+            .withDescription("One entry in a Weighted ContentSupplier.")
+            .addContent(Renode.floatContent("Weight", "Weight").withDefaultValue(1.0).withWidth(150).withDescription("The chance to pick this entry, relative to the sum of every Weight in the list. Must be >= 0."))
+            .addVariantOutput("ContentSupplier", "ContentSupplier", false, VARIANT_GRAPH_CONTENT_SUPPLIERS, "The supplier used when this entry is picked.")
             .withColorOverride("Orange")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_DELETE = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Delete", "Delete.EdgeAction", "[DEV] Delete EdgeAction"))
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_DELETE = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Delete", "Delete.EdgeAction", "Delete EdgeAction"))
+            .withDescription("Deletes the edge.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_EMPTY = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Empty", "Empty.EdgeAction", "[DEV] Empty EdgeAction"))
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_EMPTY = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Empty", "Empty.EdgeAction", "Empty EdgeAction"))
+            .withDescription("Does nothing.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_IMPORTED = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Imported", "Imported.EdgeAction", "[DEV] Imported EdgeAction"))
-            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_IMPORTED = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Imported", "Imported.EdgeAction", "Imported EdgeAction"))
+            .withDescription("Imports an exported EdgeAction.")
+            .addContent(CONTENT_SKIP)
+            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported EdgeAction name."))
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_NODES = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Nodes", "Nodes.EdgeAction", "Nodes EdgeAction"))
+            .withDescription("Runs a NodeAction on the two nodes of the edge.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS, "Runs on both nodes of the edge.")
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_PROXY = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Proxy", "Proxy.EdgeAction", "Proxy EdgeAction"))
+            .withDescription("Inserts a proxy node positioned relative to a host node, which splits the edge in two. Use it to control the angle at which an edge connects to the host node, and to set the content of the inserted node.\nOne host is enough. If both nodes of the edge are selected, the action inserts one proxy node for each of them.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addContent(Renode.floatContent("MaxProxyDistance", "MaxProxyDistance").withDefaultValue(0.0).withDescription("Performance cap on the proxy distance. Must be >= 0. A larger ProxyDistance is clamped to this value, so the proxy node is still created."))
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines the reference for the SpinAngle when the edge runs along the Normal."))
+            .addVariantOutput("HostNodeSelector", "HostNodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS, "Determines the host nodes. The action skips an edge where neither of the two nodes is selected.")
+            .addVariantOutput("Normal", "Normal", false, VARIANT_VECTOR_PROVIDERS, "Sets the reference axis for both angles, as a vector from the host node. A zero vector falls back to straight up.")
+            .addVariantOutput("AngleToNormal", "AngleToNormal", false, VARIANT_DENSITY, "Angle in degrees between the Normal and the new edge that runs from the host node to the proxy node.")
+            .addVariantOutput("SpinAngle", "SpinAngle", false, VARIANT_DENSITY, "Angle in degrees around the Normal, measured from the direction of the original edge.")
+            .addVariantOutput("ProxyDistance", "ProxyDistance", false, VARIANT_DENSITY, "Distance between the proxy node and the host node.")
+            .addVariantOutput("ProxyContent", "ProxyContent", false, VARIANT_GRAPH_CONTENT_SUPPLIERS, "Content to use for the proxy node.")
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_SELECTOR = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Selector", "Selector.EdgeAction", "Selector EdgeAction"))
+            .withDescription("Runs the child EdgeAction on a subset of the edges defined by its EdgeSelector.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addVariantOutput("EdgeSelector", "EdgeSelector", false, VARIANT_GRAPH_EDGE_SELECTORS, "Defines the edge subset.")
+            .addVariantOutput("EdgeAction", "EdgeAction", false, VARIANT_GRAPH_EDGE_ACTIONS, "Action to run on the edge subset.")
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_SPLITTER = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Splitter", "Splitter.EdgeAction", "Splitter EdgeAction"))
+            .withDescription("Inserts new nodes along the edge, evenly spaced, and connects them in a chain. One node therefore replaces the edge with two edges, two nodes with three, and so on.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addContent(Renode.integerContent("NodeCount", "NodeCount").withDefaultValue(0).withDescription("Number of nodes to insert. Must be >= 0. A NodeCount of 0 leaves the edge unchanged."))
+            .addVariantOutput("Content", "Content", false, VARIANT_GRAPH_CONTENT_SUPPLIERS, "Content of the newly inserted nodes.")
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_ALL = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("All", "All.EdgeSelector", "All EdgeSelector"))
+            .withDescription("Selects all edges.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_AND = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("And", "And.EdgeSelector", "And EdgeSelector"))
+            .withDescription("Selects the edge only if every child EdgeSelector selects it. It stops at the first child that fails, so put the cheapest children first.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addVariantOutput("EdgeSelectors", "EdgeSelectors", true, VARIANT_GRAPH_EDGE_SELECTORS, "The child selectors. All of them must select the edge.")
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_ANGLE = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Angle", "Angle.EdgeSelector", "Angle EdgeSelector"))
+            .withDescription("Selects the edges whose angle to the Reference vector is within the Delimiters.\nThe measurement ignores the direction of the edge. An angle above 90 degrees folds to 180 minus itself, so both ends of an edge give the same result.")
+            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addVariantOutput("Reference", "Reference", false, VARIANT_VECTOR_PROVIDERS, "The vector to measure against, sampled at the middle of the edge.")
+            .addNodeOutput("Delimiters", "Delimiters", true, () -> HytaleGeneratorNodes.NODE_RANGE_DECIMAL, "Valid angles in degrees, from 0 to 90.")
+            .addCategory(CATEGORY_GRAPH);
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_IMPORTED = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Imported", "Imported.EdgeSelector", "Imported EdgeSelector"))
+            .withDescription("Imports an exported EdgeSelector.")
+            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported EdgeSelector name."))
             .addContent(CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_NODES = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Nodes", "Nodes.EdgeAction", "[DEV] Nodes EdgeAction"))
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_LENGTH = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Length", "Length.EdgeSelector", "Length EdgeSelector"))
+            .withDescription("Selects the edges whose length is within the Delimiters.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS)
+            .addNodeOutput("Delimiters", "Delimiters", true, () -> HytaleGeneratorNodes.NODE_RANGE_DECIMAL, "Valid edge lengths in blocks.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_PROXY = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Proxy", "Proxy.EdgeAction", "[DEV] Proxy EdgeAction"))
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_NODES = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Nodes", "Nodes.EdgeSelector", "Nodes EdgeSelector"))
+            .withDescription("Selects the edge if its two nodes are also selected, according to the Operator.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("MaxProxyDistance", "MaxProxyDistance").withDefaultValue(0.0))
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addVariantOutput("HostNodeSelector", "HostNodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS)
-            .addVariantOutput("Normal", "Normal", false, VARIANT_VECTOR_PROVIDERS)
-            .addVariantOutput("AngleToNormal", "AngleToNormal", false, VARIANT_DENSITY)
-            .addVariantOutput("SpinAngle", "SpinAngle", false, VARIANT_DENSITY)
-            .addVariantOutput("ProxyDistance", "ProxyDistance", false, VARIANT_DENSITY)
-            .addVariantOutput("ProxyContent", "ProxyContent", false, VARIANT_GRAPH_CONTENT_SUPPLIERS)
+            .addContent(Renode.enumContent("Operator", "Operator").withValues("And", "Or").withDefaultValue("And").withDescription("Sets whether both nodes must be selected or only one.\n- And: both nodes need to be selected.\n- Or: only one node needs to be selected."))
+            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS, "Selects the nodes of the edge.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_SELECTOR = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Selector", "Selector.EdgeAction", "[DEV] Selector EdgeAction"))
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_NOT = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Not", "Not.EdgeSelector", "Not EdgeSelector"))
+            .withDescription("Inverts the selection of the child EdgeSelector.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("EdgeSelector", "EdgeSelector", false, VARIANT_GRAPH_EDGE_SELECTORS)
-            .addVariantOutput("EdgeAction", "EdgeAction", false, VARIANT_GRAPH_EDGE_ACTIONS)
+            .addVariantOutput("EdgeSelector", "EdgeSelector", false, VARIANT_GRAPH_EDGE_SELECTORS, "The child selector to invert.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_ACTION_SPLITTER = addNode(VARIANT_GRAPH_EDGE_ACTIONS.variantNode("Splitter", "Splitter.EdgeAction", "[DEV] Splitter EdgeAction"))
-            .withDescription("Replaces an edge with evenly spaced nodes along it, then deletes the original edge.")
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_OR = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Or", "Or.EdgeSelector", "Or EdgeSelector"))
+            .withDescription("Selects the edge if any child EdgeSelector selects it. It stops at the first child that selects it, so put the cheapest children first.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.integerContent("NodeCount", "NodeCount").withDefaultValue(0))
-            .addVariantOutput("Content", "Content", false, VARIANT_GRAPH_CONTENT_SUPPLIERS)
+            .addVariantOutput("EdgeSelectors", "EdgeSelectors", true, VARIANT_GRAPH_EDGE_SELECTORS, "The child selectors. Any one of them selecting the edge is enough.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_ALL = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("All", "All.EdgeSelector", "[DEV] All EdgeSelector"))
+    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_RANDOM = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Random", "Random.EdgeSelector", "Random EdgeSelector"))
+            .withDescription("Gives every edge an independent chance of being selected.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
+            .addContent(Renode.floatContent("Chance", "Chance").withDefaultValue(0.0).withWidth(150).withDescription("The probability that any given edge is selected, from 0.0 to 1.0. Must be >= 0. A value of 1.0 or more selects every edge."))
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which edges are selected."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_AND = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("And", "And.EdgeSelector", "[DEV] And EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("EdgeSelectors", "EdgeSelectors", true, VARIANT_GRAPH_EDGE_SELECTORS)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_ANGLE = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Angle", "Angle.EdgeSelector", "[DEV] Angle EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("Reference", "Reference", false, VARIANT_VECTOR_PROVIDERS)
-            .addNodeOutput("Delimiters", "Delimiters", true, () -> HytaleGeneratorNodes.NODE_RANGE_DECIMAL)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_IMPORTED = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Imported", "Imported.EdgeSelector", "[DEV] Imported EdgeSelector"))
-            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
-            .addContent(CONTENT_SKIP)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_LENGTH = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Length", "Length.EdgeSelector", "[DEV] Length EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addNodeOutput("Delimiters", "Delimiters", true, () -> HytaleGeneratorNodes.NODE_RANGE_DECIMAL)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_NODES = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Nodes", "Nodes.EdgeSelector", "[DEV] Nodes EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.enumContent("Operator", "Operator").withValues("And", "Or").withDefaultValue("And"))
-            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_NOT = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Not", "Not.EdgeSelector", "[DEV] Not EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("EdgeSelector", "EdgeSelector", false, VARIANT_GRAPH_EDGE_SELECTORS)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_OR = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Or", "Or.EdgeSelector", "[DEV] Or EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("EdgeSelectors", "EdgeSelectors", true, VARIANT_GRAPH_EDGE_SELECTORS)
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_EDGE_SELECTOR_RANDOM = addNode(VARIANT_GRAPH_EDGE_SELECTORS.variantNode("Random", "Random.EdgeSelector", "[DEV] Random EdgeSelector"))
-            .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Chance", "Chance").withDefaultValue(0.0).withWidth(150))
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_GENERATOR = addNode(Renode.node("GraphGenerator", "[DEV] GraphGenerator"))
-            .addContent(Renode.smallStringContent("ImportName", "ImportName").withDefaultValue("").withWidth(350))
-            .addContent(Renode.smallStringContent("ExportName", "ExportName").withDefaultValue("").withWidth(350))
+    public static final NodeBuilder NODE_GRAPH_GENERATOR = addNode(Renode.node("GraphGenerator", "GraphGenerator"))
+            .withDescription("Builds a procedural graph of interconnected nodes. Each node carries content, such as a Density or a Prop Distribution, and the graph controls where that content sits and how it connects.")
+            .addContent(Renode.smallStringContent("ImportName", "ImportName").withDefaultValue("").withWidth(350).withDescription("Imports the Graph Generator exported under this name."))
+            .addContent(Renode.smallStringContent("ExportName", "ExportName").withDefaultValue("").withWidth(350).withDescription("Exports this Graph Generator under this name."))
             .addContent(Renode.checkboxContent("IsSingleInstance", "IsSingleInstance").withDefaultValue(true).withDescription("When enabled, all importers share the same underlying GraphGenerator instance."))
-            .addContent(Renode.integerContent("CacheCapacity", "CacheCapacity").withDefaultValue(50).withWidth(100).withDescription("Maximum number of cached graph cells. Must be >= 1."))
-            .addContent(Renode.checkboxContent("PrintStats", "PrintStats").withDefaultValue(false).withDescription("Log per-pass graph generation timing stats."))
-            .addContent(Renode.integerContent("StatsPrintInterval", "StatsPrintInterval").withDefaultValue(50).withWidth(100).withDescription("Number of graph generations between stats printouts."))
-            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("UNNAMED").withWidth(250).withDescription("Label included in printed stats output."))
-            .addVariantOutput("Passes", "GraphPasses", true, VARIANT_GRAPH_PASSES)
-            .addNodeOutput("CacheCellSize", "CacheCellSize", false, () -> HytaleGeneratorNodes.NODE_POINT_3D, "Size of each cache cell in blocks. All components must be greater than 0.")
+            .addContent(Renode.integerContent("CacheCapacity", "CacheCapacity").withDefaultValue(50).withWidth(100).withDescription("Sets how many cells can stay in memory at once. Must be >= 1. Too small a value regenerates the graph far more often than necessary. A good starting value is 50."))
+            .addContent(Renode.checkboxContent("PrintStats", "PrintStats").withDefaultValue(false).withDescription("Prints the graph generation performance report to the logs."))
+            .addContent(Renode.integerContent("StatsPrintInterval", "StatsPrintInterval").withDefaultValue(50).withWidth(100).withDescription("Prints the performance report after this many cells are generated. Must be >= 0."))
+            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("UNNAMED").withWidth(250).withDescription("Identifies this Graph Generator in the performance report."))
+            .addVariantOutput("Passes", "GraphPasses", true, VARIANT_GRAPH_PASSES, "Lists the passes that build the graph, in the order they run. Each pass sees the graph as the previous passes left it.")
+            .addNodeOutput("CacheCellSize", "CacheCellSize", false, () -> HytaleGeneratorNodes.NODE_POINT_3D, "Size of each cache cell in blocks. All components must be greater than 0. A good starting size for most cases is between 320 and 700 blocks per component.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONNECTED_EDGES = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ConnectedEdges", "ConnectedEdges.NodeAction", "[DEV] ConnectedEdges NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONNECTED_EDGES = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ConnectedEdges", "ConnectedEdges.NodeAction", "ConnectedEdges NodeAction"))
+            .withDescription("Runs the EdgeAction on a fraction of the node's connected edges, set by the Ratio.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("Ratio", "Ratio").withDefaultValue(1.0).withWidth(150))
-            .addVariantOutput("EdgeAction", "EdgeAction", false, VARIANT_GRAPH_EDGE_ACTIONS)
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which connected edges are picked when the Ratio is less than 1.0."))
+            .addContent(Renode.floatContent("Ratio", "Ratio").withDefaultValue(1.0).withWidth(150).withDescription("The fraction of connected edges the EdgeAction runs on, rounded down. Must be >= 0. A Ratio of 0.5 on a node with 5 connected edges runs on 2 edges. A value of 1.0 or more runs on all of them."))
+            .addVariantOutput("EdgeAction", "EdgeAction", false, VARIANT_GRAPH_EDGE_ACTIONS, "Runs on the connected edges.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONNECTED_NODES = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ConnectedNodes", "ConnectedNodes.NodeAction", "[DEV] ConnectedNodes NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONNECTED_NODES = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ConnectedNodes", "ConnectedNodes.NodeAction", "ConnectedNodes NodeAction"))
+            .withDescription("Runs the NodeAction on a fraction of the node's connected nodes, set by the Ratio.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("Ratio", "Ratio").withDefaultValue(1.0).withWidth(150))
-            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS)
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which connected nodes are picked when the Ratio is less than 1.0."))
+            .addContent(Renode.floatContent("Ratio", "Ratio").withDefaultValue(1.0).withWidth(150).withDescription("The fraction of connected nodes the NodeAction runs on, rounded down. Must be >= 0. A Ratio of 0.5 on a node with 5 connected nodes runs on 2 nodes. A value of 1.0 or more runs on all of them."))
+            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS, "Runs on the connected nodes.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONTENT = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Content", "Content.NodeAction", "[DEV] Content NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONTENT = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Content", "Content.NodeAction", "Content NodeAction"))
+            .withDescription("Attaches Content to nodes.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("Content", "Content", false, VARIANT_GRAPH_CONTENT_SUPPLIERS)
+            .addVariantOutput("Content", "Content", false, VARIANT_GRAPH_CONTENT_SUPPLIERS, "The Content to attach to the nodes.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONTENT_COPY = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ContentCopy", "ContentCopy.NodeAction", "[DEV] ContentCopy NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_CONTENT_COPY = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ContentCopy", "ContentCopy.NodeAction", "ContentCopy NodeAction"))
+            .withDescription("Copies the Content of a connected node onto the node. If more than one connected node passes the predicate, the Content to copy is picked at random.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addVariantOutput("ContentPredicate", "ContentPredicate", false, VARIANT_GRAPH_CONTENT_PREDICATES)
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which of the passing nodes is copied from."))
+            .addVariantOutput("ContentPredicate", "ContentPredicate", false, VARIANT_GRAPH_CONTENT_PREDICATES, "Filters which nodes can be copied from.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_DELETE = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Delete", "Delete.NodeAction", "[DEV] Delete NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_DELETE = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Delete", "Delete.NodeAction", "Delete NodeAction"))
+            .withDescription("Deletes the node.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_EMPTY = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Empty", "Empty.NodeAction", "[DEV] Empty NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_EMPTY = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Empty", "Empty.NodeAction", "Empty NodeAction"))
+            .withDescription("Does nothing.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_IMPORTED = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Imported", "Imported.NodeAction", "[DEV] Imported NodeAction"))
-            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_IMPORTED = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Imported", "Imported.NodeAction", "Imported NodeAction"))
+            .withDescription("Imports an exported NodeAction.")
+            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported NodeAction name."))
             .addContent(CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_JITTER_2D = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Jitter2d", "Jitter2d.NodeAction", "[DEV] Jitter2d NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_JITTER_2D = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Jitter2d", "Jitter2d.NodeAction", "Jitter2d NodeAction"))
+            .withDescription("Moves the node a random distance in a random horizontal direction, up to the Magnitude.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Magnitude", "Magnitude").withDefaultValue(0.0))
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
+            .addContent(Renode.floatContent("Magnitude", "Magnitude").withDefaultValue(0.0).withDescription("The maximum distance the node can move. Must be >= 0."))
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines the direction and the distance."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_JITTER_3D = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Jitter3d", "Jitter3d.NodeAction", "[DEV] Jitter3d NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_JITTER_3D = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Jitter3d", "Jitter3d.NodeAction", "Jitter3d NodeAction"))
+            .withDescription("Moves the node a random distance in a random direction, up to the Magnitude.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Magnitude", "Magnitude").withDefaultValue(0.0))
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
+            .addContent(Renode.floatContent("Magnitude", "Magnitude").withDefaultValue(0.0).withDescription("The maximum distance the node can move. Must be >= 0."))
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines the direction and the distance."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_MOVE = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Move", "Move.NodeAction", "[DEV] Move NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_MOVE = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Move", "Move.NodeAction", "Move NodeAction"))
+            .withDescription("Moves the node by the vector.\nMaxDistance is a performance cap on the length of that vector. If the vector reaches MaxDistance, the node does not move at all and nothing is logged. A MaxDistance set too low therefore disables the action silently.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("MaxDistance", "MaxDistance").withDefaultValue(0.0))
-            .addVariantOutput("Vector", "Vector", false, VARIANT_VECTOR_PROVIDERS)
+            .addContent(Renode.floatContent("MaxDistance", "MaxDistance").withDefaultValue(0.0).withDescription("Performance cap on the vector's length. Must be >= 0. The node does not move if the vector reaches this length."))
+            .addVariantOutput("Vector", "Vector", false, VARIANT_VECTOR_PROVIDERS, "Moves the node.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_PROXIMITY_CONNECTOR = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ProximityConnector", "ProximityConnector.NodeAction", "[DEV] ProximityConnector NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_PROXIMITY_CONNECTOR = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("ProximityConnector", "ProximityConnector.NodeAction", "ProximityConnector NodeAction"))
+            .withDescription("Connects the node to the neighboring nodes that are selected and within Range. Cap sets how many connections it can create.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0))
-            .addContent(Renode.integerContent("Cap", "Cap").withDefaultValue(-1))
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS)
+            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0).withDescription("Maximum connection distance. Must be >= 0."))
+            .addContent(Renode.integerContent("Cap", "Cap").withDefaultValue(-1).withDescription("The maximum number of connections allowed, or -1 for uncapped. Must be >= -1."))
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which connections are kept when capped."))
+            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS, "Filters which neighboring nodes can be connected to.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_SELECTOR = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Selector", "Selector.NodeAction", "[DEV] Selector NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_SELECTOR = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Selector", "Selector.NodeAction", "Selector NodeAction"))
+            .withDescription("Runs the NodeAction on a subset of nodes defined by the NodeSelector.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS)
-            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS)
+            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS,  "Defines the subset of nodes.")
+            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS, "Runs on each node in the subset.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_SPAWNER = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Spawner", "Spawner.NodeAction", "[DEV] Spawner NodeAction"))
-            .withDescription("Spawns child graph nodes at positions generated relative to the current node. The offset vector is applied from the node position; if its length is greater than or equal to MaxOffsetExclusive, spawning is skipped.")
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_SPAWNER = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Spawner", "Spawner.NodeAction", "Spawner NodeAction"))
+            .withDescription("Spawns a cluster of new nodes around the node. If CreateEdges is enabled, an edge connects the node to every new node in the cluster.\nThe cluster has an origin of its own. The Offset vector sets where that origin sits relative to the node, and the Positions then place the new nodes relative to the origin.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("MaxOffsetExclusive", "MaxOffsetExclusive").withDefaultValue(0.0))
-            .addContent(Renode.checkboxContent("CreateEdges", "CreateEdges").withDefaultValue(false))
-            .addVariantOutput("Offset", "Offset", false, VARIANT_VECTOR_PROVIDERS)
-            .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS)
-            .addVariantOutput("Content", "Content", false, VARIANT_GRAPH_CONTENT_SUPPLIERS)
-            .addNodeOutput("ClusterBounds", "ClusterBounds", false, NODE_BOUNDS_DECIMAL_3D, "The bounds used to constrain spawned positions relative to the cluster anchor.")
+            .addContent(Renode.floatContent("MaxOffsetExclusive", "MaxOffsetExclusive").withDefaultValue(0.0).withDescription("Performance cap on the Offset length. Must be >= 0. The cap is exclusive, so an Offset that reaches it spawns nothing at all and nothing is logged."))
+            .addContent(Renode.checkboxContent("CreateEdges", "CreateEdges").withDefaultValue(false).withDescription("If enabled, an edge connects the node to every new node."))
+            .addVariantOutput("Offset", "Offset", false, VARIANT_VECTOR_PROVIDERS, "Offsets the cluster's origin relative to the node.")
+            .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS, "Determines the new nodes' positions relative to the cluster's origin.")
+            .addVariantOutput("Content", "Content", false, VARIANT_GRAPH_CONTENT_SUPPLIERS, "The Content attached to the new nodes.")
+            .addNodeOutput("ClusterBounds", "ClusterBounds", false, NODE_BOUNDS_DECIMAL_3D, "Bounds the cluster around its origin. New nodes appear only inside these bounds, so keep them as small as the cluster needs.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_WEIGHTED = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Weighted", "Weighted.NodeAction", "[DEV] Weighted NodeAction"))
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_WEIGHTED = addNode(VARIANT_GRAPH_NODE_ACTIONS.variantNode("Weighted", "Weighted.NodeAction", "Weighted NodeAction"))
+            .withDescription("Picks a NodeAction to run from a weighted list.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
-            .addNodeOutput("Entries", "Entries", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_ACTION_WEIGHTED_WEIGHT)
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which entry is picked."))
+            .addNodeOutput("Entries", "Entries", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_ACTION_WEIGHTED_WEIGHT, "The weighted list of NodeActions.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_WEIGHTED_WEIGHT = addNode(Renode.node("Entry.Weighted.NodeAction", "[DEV] Entry | Weighted NodeAction"))
-            .addContent(Renode.floatContent("Weight", "Weight").withDefaultValue(1.0).withWidth(150))
-            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS)
+    public static final NodeBuilder NODE_GRAPH_NODE_ACTION_WEIGHTED_WEIGHT = addNode(Renode.node("Entry.Weighted.NodeAction", "Entry | Weighted NodeAction"))
+            .withDescription("One entry in a Weighted NodeAction.")
+            .addContent(Renode.floatContent("Weight", "Weight").withDefaultValue(1.0).withWidth(150).withDescription("The chance to pick this entry, relative to the sum of every Weight in the list. Must be >= 0."))
+            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS, "The action to run when this entry is picked.")
             .withColorOverride("Orange")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT = addNode(Renode.node("NodeContent.Graph", "[DEV] NodeContent"))
-            .addContent(Renode.smallStringContent("ExportName", "ExportName").withDefaultValue("").withWidth(350))
-            .addContent(Renode.smallStringContent("ImportName", "ImportName").withDefaultValue("").withWidth(350))
-            .addContent(Renode.listContent("ContentTags", "ContentTags", "String").withWidth(350))
-            .addNodeOutput("DensityContent", "DensityContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_DENSITY)
-            .addNodeOutput("MaterialContent", "MaterialContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_MATERIAL)
-            .addNodeOutput("PropDistributionContent", "PropDistributionContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_PROP_DISTRIBUTION)
-            .addNodeOutput("PositionsContent", "PositionsContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_POSITIONS)
+    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT = addNode(Renode.node("NodeContent.Graph", "NodeContent"))
+            .withDescription("The content a graph node carries, split by content type into named layers. A ContentSupplier decides which content a node gets, and a GraphPass attaches it.")
+            .addContent(Renode.smallStringContent("ExportName", "ExportName").withDefaultValue("").withWidth(350).withDescription("Exports this content under this name. Another NodeContent can then set ImportName to the same name."))
+            .addContent(Renode.smallStringContent("ImportName", "ImportName").withDefaultValue("").withWidth(350).withDescription("Imports the content exported under this name. The imported content replaces every other parameter on this node."))
+            .addContent(Renode.listContent("ContentTags", "ContentTags", "String").withWidth(350).withDescription("Tags the content, so a Set ContentPredicate can test for it."))
+            .addNodeOutput("DensityContent", "DensityContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_DENSITY, "Holds the Density fields that the node carries. A Graph Density reads them.")
+            .addNodeOutput("MaterialContent", "MaterialContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_MATERIAL, "Holds the Material Providers that the node carries. A Graph Material Provider reads them.")
+            .addNodeOutput("PropDistributionContent", "PropDistributionContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_PROP_DISTRIBUTION, "Holds the Prop Distributions that the node carries. A Graph Prop Distribution reads them.")
+            .addNodeOutput("PositionsContent", "PositionsContent", true, () -> HytaleGeneratorNodes.NODE_GRAPH_NODE_CONTENT_POSITIONS, "Holds the Positions assets that the node carries. A Graph Positions Provider reads them.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_DENSITY = addNode(Renode.node("Density.NodeContent", "[DEV] Density NodeContent"))
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0))
-            .addVariantOutput("Density", "Density", false, VARIANT_DENSITY)
+    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_DENSITY = addNode(Renode.node("Density.NodeContent", "Density NodeContent"))
+            .withDescription("One Density entry in the content a node carries. A Graph Density reads it.")
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The layer this entry belongs to. A reader finds this entry only when its own ContentLayer is exactly the same. The match is case sensitive, and a reader that matches nothing silently gets empty content."))
+            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0).withDescription("The radius in blocks around the node where the content applies. Must be >= 0. A Range of 0 reaches nowhere."))
+            .addVariantOutput("Density", "Density", false, VARIANT_DENSITY, "The Density field the node carries.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_MATERIAL = addNode(Renode.node("Material.NodeContent", "[DEV] Material NodeContent"))
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0))
-            .addVariantOutput("MaterialProvider", "MaterialProvider", false, VARIANT_MATERIAL_PROVIDERS)
+    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_MATERIAL = addNode(Renode.node("Material.NodeContent", "Material NodeContent"))
+            .withDescription("One Material entry in the content a node carries. A Graph Material Provider reads it.")
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The layer this entry belongs to. A reader finds this entry only when its own ContentLayer is exactly the same. The match is case sensitive, and a reader that matches nothing silently gets empty content."))
+            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0).withDescription("The radius in blocks around the node where the content applies. Must be >= 0. A Range of 0 reaches nowhere."))
+            .addVariantOutput("MaterialProvider", "MaterialProvider", false, VARIANT_MATERIAL_PROVIDERS, "The Material Provider the node carries.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_POSITIONS = addNode(Renode.node("Positions.NodeContent", "[DEV] Positions NodeContent"))
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0))
-            .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS)
+    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_POSITIONS = addNode(Renode.node("Positions.NodeContent", "Positions NodeContent"))
+            .withDescription("One Positions entry in the content a node carries. A Graph Positions Provider reads it.")
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The layer this entry belongs to. A reader finds this entry only when its own ContentLayer is exactly the same. The match is case sensitive, and a reader that matches nothing silently gets empty content."))
+            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0).withDescription("The radius in blocks around the node where the content applies. Must be >= 0. A Range of 0 reaches nowhere."))
+            .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS, "The Positions the node carries.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_PROP_DISTRIBUTION = addNode(Renode.node("PropDistribution.NodeContent", "[DEV] PropDistribution NodeContent"))
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0))
-            .addVariantOutput("PropDistribution", "PropDistribution", false, VARIANT_PROP_DISTRIBUTIONS)
+    public static final NodeBuilder NODE_GRAPH_NODE_CONTENT_PROP_DISTRIBUTION = addNode(Renode.node("PropDistribution.NodeContent", "PropDistribution NodeContent"))
+            .withDescription("One Prop Distribution entry in the content a node carries. A Graph Prop Distribution reads it.")
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The layer this entry belongs to. A reader finds this entry only when its own ContentLayer is exactly the same. The match is case sensitive, and a reader that matches nothing silently gets empty content."))
+            .addContent(Renode.floatContent("Range", "Range").withDefaultValue(0.0).withDescription("The radius in blocks around the node where the content applies. Must be >= 0. A Range of 0 reaches nowhere."))
+            .addVariantOutput("PropDistribution", "PropDistribution", false, VARIANT_PROP_DISTRIBUTIONS, "The Prop Distribution the node carries.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_ALL = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("All", "All.NodeSelector", "[DEV] All NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_ALL = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("All", "All.NodeSelector", "All NodeSelector"))
+            .withDescription("Selects all nodes.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_AND = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("And", "And.NodeSelector", "[DEV] And NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_AND = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("And", "And.NodeSelector", "And NodeSelector"))
+            .withDescription("Selects the node only if every child NodeSelector selects it. It stops at the first child that fails, so put the cheapest children first.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("NodeSelectors", "NodeSelectors", true, VARIANT_GRAPH_NODE_SELECTORS)
+            .addVariantOutput("NodeSelectors", "NodeSelectors", true, VARIANT_GRAPH_NODE_SELECTORS, "The child selectors. All of them must select the node.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_CONNECTION_COUNT = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("ConnectionCount", "ConnectionCount.NodeSelector", "[DEV] ConnectionCount NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_CONNECTION_COUNT = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("ConnectionCount", "ConnectionCount.NodeSelector", "ConnectionCount NodeSelector"))
+            .withDescription("Selects the nodes whose connection count is in the Counts list.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.listContent("Counts", "Connections", "Int").withWidth(100))
+            .addContent(Renode.listContent("Counts", "Connections", "Int").withWidth(100).withDescription("The connection counts that select a node. A node with a count outside this list is not selected."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_CONTENT = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Content", "Content.NodeSelector", "[DEV] Content NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_CONTENT = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Content", "Content.NodeSelector", "Content NodeSelector"))
+            .withDescription("Selects the nodes with Content approved by the ContentPredicate.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("ContentPredicate", "ContentPredicate", false, VARIANT_GRAPH_CONTENT_PREDICATES)
+            .addVariantOutput("ContentPredicate", "ContentPredicate", false, VARIANT_GRAPH_CONTENT_PREDICATES, "Determines which nodes are selected.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_DENSITY_DELIMITED = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("DensityDelimited", "DensityDelimited.NodeSelector", "[DEV] DensityDelimited NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_DENSITY_DELIMITED = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("DensityDelimited", "DensityDelimited.NodeSelector", "DensityDelimited NodeSelector"))
+            .withDescription("Selects the nodes where the Density value at the node's position falls within the Delimiters.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("Density", "Density", false, VARIANT_DENSITY)
-            .addNodeOutput("Delimiters", "Delimiters", true, () -> HytaleGeneratorNodes.NODE_RANGE_DECIMAL)
+            .addVariantOutput("Density", "Density", false, VARIANT_DENSITY, "Determines the Density value at each node's position.")
+            .addNodeOutput("Delimiters", "Delimiters", true, () -> HytaleGeneratorNodes.NODE_RANGE_DECIMAL, "Defines the valid Density values.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_IMPORTED = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Imported", "Imported.NodeSelector", "[DEV] Imported NodeSelector"))
-            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_IMPORTED = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Imported", "Imported.NodeSelector", "Imported NodeSelector"))
+            .withDescription("Imports an exported NodeSelector.")
             .addContent(CONTENT_SKIP)
+            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported NodeSelector name."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_NEIGHBOR_EDGES = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("NeighborEdges", "NeighborEdges.NodeSelector", "[DEV] NeighborEdges NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_NEIGHBOR_EDGES = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("NeighborEdges", "NeighborEdges.NodeSelector", "NeighborEdges NodeSelector"))
+            .withDescription("Selects the node when at least SelectedNeighborsThreshold of its connected edges are selected by the child EdgeSelector.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.integerContent("SelectedNeighborsThreshold", "SelectedNeighborsThreshold").withDefaultValue(-1))
-            .addVariantOutput("EdgeSelector", "EdgeSelector", false, VARIANT_GRAPH_EDGE_SELECTORS)
+            .addContent(Renode.integerContent("SelectedNeighborsThreshold", "SelectedNeighborsThreshold").withDefaultValue(-1).withDescription("The minimum number of connected edges that must be selected. This threshold counts edges, not neighbors. Use -1 to require all of them."))
+            .addVariantOutput("EdgeSelector", "EdgeSelector", false, VARIANT_GRAPH_EDGE_SELECTORS, "Selects the node's connected edges.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_NEIGHBOR_NODES = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("NeighborNodes", "NeighborNodes.NodeSelector", "[DEV] NeighborNodes NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_NEIGHBOR_NODES = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("NeighborNodes", "NeighborNodes.NodeSelector", "NeighborNodes NodeSelector"))
+            .withDescription("Selects the node when at least SelectedNeighborsThreshold of its neighbors are selected by the child NodeSelector.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.integerContent("SelectedNeighborsThreshold", "SelectedNeighborsThreshold").withDefaultValue(-1))
-            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS)
+            .addContent(Renode.integerContent("SelectedNeighborsThreshold", "SelectedNeighborsThreshold").withDefaultValue(-1).withDescription("The minimum number of neighbors that must be selected. Use -1 to require all of them, which never selects a node without neighbors."))
+            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS, "Selects the node's neighbors.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_NOT = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Not", "Not.NodeSelector", "[DEV] Not NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_NOT = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Not", "Not.NodeSelector", "Not NodeSelector"))
+            .withDescription("Inverts the selection of the child NodeSelector.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS)
+            .addVariantOutput("NodeSelector", "NodeSelector", false, VARIANT_GRAPH_NODE_SELECTORS, "The child selector to invert.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_OR = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Or", "Or.NodeSelector", "[DEV] Or NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_OR = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Or", "Or.NodeSelector", "Or NodeSelector"))
+            .withDescription("Selects the node if any child NodeSelector selects it. It stops at the first child that selects it, so put the cheapest children first.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addVariantOutput("NodeSelectors", "NodeSelectors", true, VARIANT_GRAPH_NODE_SELECTORS)
+            .addVariantOutput("NodeSelectors", "NodeSelectors", true, VARIANT_GRAPH_NODE_SELECTORS,  "The child selectors. Any one of them selecting the node is enough.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_RANDOM = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Random", "Random.NodeSelector", "[DEV] Random NodeSelector"))
+    public static final NodeBuilder NODE_GRAPH_NODE_SELECTOR_RANDOM = addNode(VARIANT_GRAPH_NODE_SELECTORS.variantNode("Random", "Random.NodeSelector", "Random NodeSelector"))
+            .withDescription("Gives every node an independent chance of being selected.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.floatContent("Chance", "Chance").withDefaultValue(0.0).withWidth(100))
-            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350))
+            .addContent(Renode.floatContent("Chance", "Chance").withDefaultValue(0.0).withWidth(100).withDescription("The probability that any given node is selected, from 0.0 to 1.0. Must be >= 0. A value of 1.0 or more selects every node."))
+            .addContent(Renode.smallStringContent("Seed", "Seed").withDefaultValue("").withWidth(350).withDescription("Determines which nodes are selected."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_PASS_EDGE_ACTION = addNode(VARIANT_GRAPH_PASSES.variantNode("EdgeAction", "EdgeAction.GraphPass", "[DEV] EdgeAction GraphPass"))
+    public static final NodeBuilder NODE_GRAPH_PASS_EDGE_ACTION = addNode(VARIANT_GRAPH_PASSES.variantNode("EdgeAction", "EdgeAction.GraphPass", "EdgeAction GraphPass"))
+            .withDescription("Runs an EdgeAction on the edges.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("Label used in graph generation timing stats."))
-            .addVariantOutput("EdgeAction", "EdgeAction", false, VARIANT_GRAPH_EDGE_ACTIONS)
+            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("The label used to identify this Graph Pass in the performance report."))
+            .addVariantOutput("EdgeAction", "EdgeAction", false, VARIANT_GRAPH_EDGE_ACTIONS, "The action to run on every edge.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_PASS_IMPORTED = addNode(VARIANT_GRAPH_PASSES.variantNode("Imported", "Imported.GraphPass", "[DEV] Imported GraphPass"))
-            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
+    public static final NodeBuilder NODE_GRAPH_PASS_IMPORTED = addNode(VARIANT_GRAPH_PASSES.variantNode("Imported", "Imported.GraphPass", "Imported GraphPass"))
+            .withDescription("Imports an exported GraphPass.")
             .addContent(CONTENT_SKIP)
+            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("The exported GraphPass name."))
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_PASS_MANUAL = addNode(VARIANT_GRAPH_PASSES.variantNode("Manual", "Manual.GraphPass", "[DEV] Manual GraphPass"))
+    public static final NodeBuilder NODE_GRAPH_PASS_MANUAL = addNode(VARIANT_GRAPH_PASSES.variantNode("Manual", "Manual.GraphPass", "Manual GraphPass"))
+            .withDescription("Places nodes manually.\nNames resolve inside this pass, so a connection can only name a node from the same Nodes list. The pass skips a node whose Position is outside the region it is asked to generate, and connections to a skipped node are dropped.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("Label used in graph generation timing stats."))
-            .addNodeOutput("Nodes", "Nodes", true, () -> HytaleGeneratorNodes.NODE_GRAPH_PASS_MANUAL_NODE)
+            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("The label used to identify this Graph Pass in the performance report."))
+            .addNodeOutput("Nodes", "Nodes", true, () -> HytaleGeneratorNodes.NODE_GRAPH_PASS_MANUAL_NODE, "The nodes to place.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_PASS_MANUAL_NODE = addNode(Renode.node("Node.Manual.GraphPass", "[DEV] Node | Manual GraphPass"))
-            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
-            .addContent(Renode.listContent("Connections", "Connections", "String").withWidth(350))
-            .addNodeOutput("Position", "Position", false, () -> HytaleGeneratorNodes.NODE_POINT_3D)
-            .addNodeOutput("Content", "Content", false, NODE_GRAPH_NODE_CONTENT)
+    public static final NodeBuilder NODE_GRAPH_PASS_MANUAL_NODE = addNode(Renode.node("Node.Manual.GraphPass", "Node | Manual GraphPass"))
+            .withDescription("One node placed by a Manual GraphPass.")
+            .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350).withDescription("Identifies this node inside this pass. Names do not have to be unique, but only the last node with a given name can receive connections."))
+            .addContent(Renode.listContent("Connections", "Connections", "String").withWidth(350).withDescription("Names of the nodes this node connects to. The pass ignores a name that no node in this pass uses, and it ignores a node that names itself."))
+            .addNodeOutput("Position", "Position", false, () -> HytaleGeneratorNodes.NODE_POINT_3D, "Where to place the node.")
+            .addNodeOutput("Content", "Content", false, NODE_GRAPH_NODE_CONTENT, "The content the node carries.")
             .withColorOverride("Yellow")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_PASS_NODE_ACTION = addNode(VARIANT_GRAPH_PASSES.variantNode("NodeAction", "NodeAction.GraphPass", "[DEV] NodeAction GraphPass"))
+    public static final NodeBuilder NODE_GRAPH_PASS_NODE_ACTION = addNode(VARIANT_GRAPH_PASSES.variantNode("NodeAction", "NodeAction.GraphPass", "NodeAction GraphPass"))
+            .withDescription("Runs a NodeAction on the nodes.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("Label used in graph generation timing stats."))
-            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS)
+            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("The label used to identify this Graph Pass in the performance report."))
+            .addVariantOutput("NodeAction", "NodeAction", false, VARIANT_GRAPH_NODE_ACTIONS, "The action to run on every node.")
             .addCategory(CATEGORY_GRAPH);
-    public static final NodeBuilder NODE_GRAPH_PASS_POSITIONS = addNode(VARIANT_GRAPH_PASSES.variantNode("Positions", "Positions.GraphPass", "[DEV] Positions GraphPass"))
+    public static final NodeBuilder NODE_GRAPH_PASS_POSITIONS = addNode(VARIANT_GRAPH_PASSES.variantNode("Positions", "Positions.GraphPass", "Positions GraphPass"))
+            .withDescription("Places a node for each position. The new nodes have empty content.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("Label used in graph generation timing stats."))
-            .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS)
+            .addContent(Renode.smallStringContent("StatsLabel", "StatsLabel").withDefaultValue("").withWidth(250).withDescription("The label used to identify this Graph Pass in the performance report."))
+            .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS, "Determines where to place the new nodes.")
             .addCategory(CATEGORY_GRAPH);
     public static final NodeBuilder NODE_MATERIAL = addNode(Renode.node("Material", "Material"))
             .withDescription("Defines a block's solid and fluid Material content.")
-            .addContent(Renode.smallStringContent("Solid", "Solid").withDefaultValue("").withWidth(350).withDescription("Defines the Solid Material's rotation."))
-            .addContent(Renode.smallStringContent("Fluid", "Fluid").withDefaultValue("").withWidth(350))
+            .addContent(Renode.assetIdContent("Solid", "Solid", "BlockType").withDefaultValue("").withWidth(350).withDescription("Defines the Solid Material's rotation."))
+            .addContent(Renode.assetIdContent("Fluid", "Fluid", "Fluid").withDefaultValue("").withWidth(350))
             .addContent(Renode.checkboxContent("SolidBottomUp", "SolidBottomUp").withDefaultValue(false).withDescription("Rotates the Material upside down. The pin overrides this."))
             .addNodeOutput("SolidRotation", "SolidRotation", false, () -> HytaleGeneratorNodes.NODE_ORTHOGONAL_ROTATION)
             .addCategory(CATEGORY_MATERIAL);
@@ -1229,11 +1286,12 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Material", "Material", false, VARIANT_MATERIAL_PROVIDERS)
             .withColorOverride("Orange")
             .addCategory(CATEGORY_MATERIAL_PROVIDERS);
-    public static final NodeBuilder NODE_MATERIAL_PROVIDER_GRAPH = addNode(VARIANT_MATERIAL_PROVIDERS.variantNode("Graph", "Graph.MaterialProvider", "[DEV] Graph MaterialProvider"))
+    public static final NodeBuilder NODE_MATERIAL_PROVIDER_GRAPH = addNode(VARIANT_MATERIAL_PROVIDERS.variantNode("Graph", "Graph.MaterialProvider", "Graph MaterialProvider"))
+            .withDescription("Reads a Material Provider from the content that graph nodes carry. The nearest node within Range of the sampled position wins, and its content provides the Material.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addContent(Renode.integerContent("QueryBufferCapacity", "QueryBufferCapacity").withDefaultValue(3).withWidth(100).withDescription("Maximum number of cached query columns. Must be >= 1."))
-            .addNodeOutput("GraphGenerator", "GraphGenerator", false, NODE_GRAPH_GENERATOR)
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The Material layer to read from each node's content. The match is exact and case sensitive. A layer that matches nothing provides no Material at all."))
+            .addContent(Renode.integerContent("QueryBufferCapacity", "QueryBufferCapacity").withDefaultValue(3).withWidth(100).withDescription("Maximum number of cached query columns. Must be >= 1. A safe starting value is 3."))
+            .addNodeOutput("GraphGenerator", "GraphGenerator", false, NODE_GRAPH_GENERATOR, "The graph to read.")
             .addCategory(CATEGORY_MATERIAL_PROVIDERS);
     public static final NodeBuilder NODE_MATERIAL_PROVIDER_IMPORTED = addNode(VARIANT_MATERIAL_PROVIDERS.variantNode("Imported", "Imported.MaterialProvider", "Imported MaterialProvider"))
             .withDescription("Imports an exported Material Provider.")
@@ -1473,7 +1531,7 @@ public class HytaleGeneratorNodes {
     public static final NodeBuilder NODE_POSITIONS_CACHE = addNode(VARIANT_POSITIONS.variantNode("Cache", "Cache.Positions", "Cache Positions"))
             .withDescription("Caches the output provided by the Positions slot to improve performance in certain situations. This asset can be useful to improve performance when a Positions asset is expensive and queried numerous times.\nHow effective this Cache is depends heavily on the use case, the provided child Positions asset, and the order in which it is queried. You can get the best performance out of this Cache asset by trial and error. An example of a good use case for this asset is at the root of an expensive Positions tree used by a Positions2D/Positions3D Density node.\nI recommend that you don't use this cache everywhere in your Positions trees, but instead place it at (or close to) the root of your Positions asset tree. That said, feel free to experiment.\nThis cache functions by saving 3D sections of space containing the Positions (points) generated by the child slot. The sections are cubes, and their size is determined by the asset's SectionSize parameter. The number of sections allowed to be saved in the cache is determined by the CacheSize asset parameter. A safe starting value for the SectionSize parameter would be 32, and a safe starting value for the CacheSize would be 50.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.integerContent("SectionsSize", "SectionsSize").withDefaultValue(32).withWidth(50).withDescription("Determines the side length of each section cube, in blocks. A safe starting value is 32."))
+            .addContent(Renode.integerContent("SectionSize", "SectionSize").withDefaultValue(32).withWidth(50).withDescription("Determines the side length of each section cube, in blocks. A safe starting value is 32."))
             .addContent(Renode.integerContent("CacheSize", "CacheSize").withDefaultValue(100).withWidth(50).withDescription("Determines how many sections can be saved in memory. A safe starting value is 50. If set to 0, the cache is ignored and positions are sourced directly from the child slot."))
             .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS, "The output of this Positions asset is cached.")
             .addCategory(CATEGORY_POSITIONS);
@@ -1510,10 +1568,11 @@ public class HytaleGeneratorNodes {
             .addContent(CONTENT_SKIP)
             .addContent(Renode.smallStringContent("Name", "Name").withDefaultValue("").withWidth(350))
             .addCategory(CATEGORY_POSITIONS);
-    public static final NodeBuilder NODE_POSITIONS_GRAPH = addNode(VARIANT_POSITIONS.variantNode("Graph", "Graph.Positions", "[DEV] Graph Positions"))
+    public static final NodeBuilder NODE_POSITIONS_GRAPH = addNode(VARIANT_POSITIONS.variantNode("Graph", "Graph.Positions", "Graph Positions"))
+            .withDescription("Reads a Positions field from the content that graph nodes carry. Every node within Range contributes its positions, and the results are combined.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addNodeOutput("GraphGenerator", "GraphGenerator", false, NODE_GRAPH_GENERATOR)
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The Positions layer to read from each node's content. The match is exact and case sensitive. A layer that matches nothing produces no positions."))
+            .addNodeOutput("GraphGenerator", "GraphGenerator", false, NODE_GRAPH_GENERATOR, "The graph to read.")
             .addCategory(CATEGORY_POSITIONS);
     public static final NodeBuilder NODE_POSITIONS_IMPORTED = addNode(VARIANT_POSITIONS.variantNode("Imported", "Imported.Positions", "Imported Positions"))
             .withDescription("Imports an exported PositionsProvider.")
@@ -1543,12 +1602,12 @@ public class HytaleGeneratorNodes {
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addContent(Renode.floatContent("PointsY", "PointsY").withDefaultValue(0.0).withWidth(100))
             .addVariantOutput("PointGenerator", "PointGenerator", false, VARIANT_POINT_GENERATORS)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_POSITIONS);
     public static final NodeBuilder NODE_POSITIONS_MESH_3D = addNode(VARIANT_POSITIONS.variantNode("Mesh3D", "Mesh3D.Positions", "[DEPRECATED] Mesh3D Positions"))
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
             .addVariantOutput("PointGenerator", "PointGenerator", false, VARIANT_POINT_GENERATORS)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_POSITIONS);
     public static final NodeBuilder NODE_POSITIONS_OCCURRENCE = addNode(VARIANT_POSITIONS.variantNode("Occurrence", "Occurrence.Positions", "Occurrence Positions"))
             .withDescription("Discards a percentage of input positions based on a Density field. The value of the Density field at each position determines the chance that the position is kept.\n- Positions where the Density value is less than or equal to 0.0 have a 0% chance of being kept.\n- Positions where the Density value is greater than or equal to 1.0 have a 100% chance of being kept.\n- Positions where the Density value is between 0.0 and 1.0 have a proportional percentage chance of being kept. Example: 0.4 → 40%.")
@@ -1607,7 +1666,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Scanner", "Scanner", false, VARIANT_SCANNERS)
             .addNodeOutput("Range", "Range", false, () -> HytaleGeneratorNodes.NODE_POINT_3D)
             .addNodeOutput("Material", "Material", false, NODE_MATERIAL)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_PROPS);
     public static final NodeBuilder NODE_PROP_CLUSTER = addNode(VARIANT_PROPS.variantNode("Cluster", "Cluster.Prop", "[DEPRECATED] Cluster Prop"))
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
@@ -1617,7 +1676,7 @@ public class HytaleGeneratorNodes {
             .addNodeOutput("WeightedProps", "WeightedProps", true, () -> HytaleGeneratorNodes.NODE_PROP_CLUSTER_WEIGHT)
             .addVariantOutput("Pattern", "Pattern", false, VARIANT_PATTERNS)
             .addVariantOutput("Scanner", "Scanner", false, VARIANT_SCANNERS)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_PROPS);
     public static final NodeBuilder NODE_PROP_CLUSTER_WEIGHT = addNode(Renode.node("Weighted.Cluster.Prop", "Weight"))
             .addContent(Renode.floatContent("Weight", "Weight").withDefaultValue(1.0).withWidth(50))
@@ -1630,7 +1689,7 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Directionality", "Directionality", false, VARIANT_DIRECTIONALITY)
             .addVariantOutput("Scanner", "Scanner", false, VARIANT_SCANNERS)
             .addNodeOutput("BlockMask", "BlockMask", false, NODE_BLOCK_MASK)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_PROPS);
     public static final NodeBuilder NODE_PROP_COLUMN_BLOCK = addNode(Renode.node("Block.Column.Prop", "Column Block"))
             .addContent(Renode.integerContent("Y", "Y").withDefaultValue(0).withWidth(50))
@@ -1793,10 +1852,11 @@ public class HytaleGeneratorNodes {
             .addVariantOutput("Positions", "Positions", false, VARIANT_POSITIONS, "Positions to pair with the Prop.")
             .addVariantOutput("Prop", "Prop", false, VARIANT_PROPS)
             .addCategory(CATEGORY_PROP_DISTRIBUTIONS);
-    public static final NodeBuilder NODE_PROP_DISTRIBUTION_GRAPH = addNode(VARIANT_PROP_DISTRIBUTIONS.variantNode("Graph", "Graph.PropDistribution", "[DEV] Graph PropDistribution"))
+    public static final NodeBuilder NODE_PROP_DISTRIBUTION_GRAPH = addNode(VARIANT_PROP_DISTRIBUTIONS.variantNode("Graph", "Graph.PropDistribution", "Graph PropDistribution"))
+            .withDescription("Reads a PropDistribution from the content that graph nodes carry. Every node within Range contributes its Props, and the results are combined.")
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
-            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350))
-            .addNodeOutput("GraphGenerator", "GraphGenerator", false, NODE_GRAPH_GENERATOR)
+            .addContent(Renode.smallStringContent("ContentLayer", "ContentLayer").withDefaultValue("").withWidth(350).withDescription("The PropDistribution layer to read from each node's content. The match is exact and case sensitive. A layer that matches nothing produces no Props."))
+            .addNodeOutput("GraphGenerator", "GraphGenerator", false, NODE_GRAPH_GENERATOR, "The graph to read.")
             .addCategory(CATEGORY_PROP_DISTRIBUTIONS);
     public static final NodeBuilder NODE_PROP_DISTRIBUTION_IMPORTED = addNode(VARIANT_PROP_DISTRIBUTIONS.variantNode("Imported", "Imported.PropDistribution", "Imported PropDistribution"))
             .withDescription("Imports an exported PropDistribution.")
@@ -1826,8 +1886,10 @@ public class HytaleGeneratorNodes {
             .withColorOverride("Grey")
             .addSchemaString("Type", "RootNode");
     public static final NodeBuilder NODE_RUNTIME = addNode(Renode.node("Runtime", "Runtime"))
-            .addContent(Renode.integerContent("Runtime", "Runtime").withDefaultValue(0).withWidth(40))
+            .withDescription("Controls the Prop generation order relative to each other.")
             .addContent(CONTENT_SKIP)
+            .addContent(Renode.integerContent("Runtime", "Runtime").withDefaultValue(0).withWidth(40))
+            .addContent(Renode.enumContent("ContextPrecision", "ContextPrecision").withValues("Biome", "Chunk", "Prop").withDefaultValue("Biome").withWidth(200).withDescription("The safe default value is Biome.\n\nSets how precisely this Runtime's context size is calculated for each Chunk. A smaller context size reduces the Output Size of the prior Stages, but a more precise option adds Dynamic Bounds Initialization overhead.\n\n- Biome: uses the maximum size for the whole Biome. This never checks the Prop Distribution, so its overhead is the lowest. Use it for Props that do not read from the world, or when the Positions are too expensive to sample.\n\n- Chunk: calculates a size for each Chunk, based on whether any Prop is present locally. It stops at the first Prop it finds, so the overhead stays low.\n\n- Prop: calculates the exact size needed for the Props placed locally. This is the most precise option, but it runs the full Prop Distribution for the Chunk. Best for large Props that are more than a few Chunks apart. Avoid it when the Positions are dense (a Chunk or less apart)."))
             .addVariantOutput("Positions", "[DEPRECATED] Positions", false, VARIANT_POSITIONS)
             .addVariantOutput("Assignments", "[DEPRECATED] Assignments", false, VARIANT_ASSIGNMENTS)
             .addVariantOutput("PropDistribution", "PropDistribution", false, VARIANT_PROP_DISTRIBUTIONS)
@@ -1839,7 +1901,7 @@ public class HytaleGeneratorNodes {
             .addContent(Renode.smallStringContent("ScanShape", "ScanShape").withDefaultValue("CIRCLE").withWidth(150))
             .addContent(Renode.integerContent("ResultCap", "ResultCap").withDefaultValue(1))
             .addVariantOutput("ChildScanner", "ChildScanner", false, VARIANT_SCANNERS)
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_SCANNERS);
     public static final NodeBuilder NODE_SCANNER_COLUMN_LINEAR = addNode(VARIANT_SCANNERS.variantNode("ColumnLinear", "ColumnLinear.Scanner", "[DEPRECATED] ColumnLinear Scanner"))
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
@@ -1849,7 +1911,7 @@ public class HytaleGeneratorNodes {
             .addContent(Renode.smallStringContent("BaseHeightName", "BaseHeightName").withDefaultValue("").withWidth(250))
             .addContent(Renode.checkboxContent("TopDownOrder", "TopDownOrder").withDefaultValue(true))
             .addContent(Renode.integerContent("ResultCap", "ResultCap").withDefaultValue(1))
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_SCANNERS);
     public static final NodeBuilder NODE_SCANNER_COLUMN_RANDOM = addNode(VARIANT_SCANNERS.variantNode("ColumnRandom", "ColumnRandom.Scanner", "[DEPRECATED] ColumnRandom Scanner"))
             .addContent(CONTENT_EXPORT_AS, CONTENT_SKIP)
@@ -1860,7 +1922,7 @@ public class HytaleGeneratorNodes {
             .addContent(Renode.checkboxContent("RelativeToPosition", "RelativeToPosition").withDefaultValue(false))
             .addContent(Renode.smallStringContent("BaseHeightName", "BaseHeightName").withDefaultValue("").withWidth(250))
             .addContent(Renode.integerContent("ResultCap", "ResultCap").withDefaultValue(1))
-            .withColorOverride("255,0,0")
+            .withColorOverride("BrightRed")
             .addCategory(CATEGORY_SCANNERS);
     public static final NodeBuilder NODE_SCANNER_IMPORTED = addNode(VARIANT_SCANNERS.variantNode("Imported", "Imported.Scanner", "Imported Scanner"))
             .withDescription("Imports an exported Scanner.")

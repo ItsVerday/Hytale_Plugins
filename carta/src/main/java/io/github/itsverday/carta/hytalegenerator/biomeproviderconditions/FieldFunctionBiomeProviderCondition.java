@@ -24,7 +24,7 @@ public class FieldFunctionBiomeProviderCondition extends BiomeProviderCondition 
     public boolean process(@NonNullDecl BiomeProvider.Context context) {
         rContext.position = context.position;
         if (context.anchor != null) rContext.densityAnchor = context.anchor;
-        double value = density.process(rContext);
+        double value = density.evaluate(rContext);
         return value >= minimum && value < maximum;
     }
 }
