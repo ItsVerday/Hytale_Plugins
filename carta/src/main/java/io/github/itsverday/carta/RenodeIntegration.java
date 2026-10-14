@@ -18,11 +18,17 @@ public class RenodeIntegration {
     private static final List<NodeCategory> categories = new ArrayList<>();
     private static final List<AbstractNodeRoot> roots = new ArrayList<>();
 
-    public static final NodeCategory CATEGORY_BIOME_PROVIDERS = addCategory(Renode.category("Biome Providers", "27,150,62"));
-    public static final NodeVariantClass VARIANT_BIOME_PROVIDERS = addVariant(Renode.variant("BiomeProvider", "27,150,62"));
-    public static final NodeVariantClass VARIANT_BIOME_PROVIDER_CONDITIONS = addVariant(Renode.variant("BiomeProviderConditions", "230,199,28"));
-    public static final NodeVariantClass VARIANT_BIOME_PROVIDER_SCANNERS = addVariant(Renode.variant("BiomeProviderScanners", "230,199,28"));
-    public static final NodeVariantClass VARIANT_BIOME_PROVIDER_POSITION_CELLS_CELL_TYPES = addVariant(Renode.variant("PositionCellsBiomeProviderCellType", "27,168,138"));
+    public static final String COLOR_BIOME_PROVIDERS = "27,150,62";
+    public static final String COLOR_BIOME_PROVIDER_CONDITIONS = "230,199,28";
+    public static final String COLOR_BIOME_PROVIDER_SCANNERS = "90,168,30";
+    public static final String COLOR_BIOME_PROVIDER_POSITION_CELLS_CELL_TYPES = "27,168,138";
+    public static final String COLOR_BIOME_PROVIDER_MISC = "23,105,156";
+
+    public static final NodeCategory CATEGORY_BIOME_PROVIDERS = addCategory(Renode.category("Biome Providers", COLOR_BIOME_PROVIDERS));
+    public static final NodeVariantClass VARIANT_BIOME_PROVIDERS = addVariant(Renode.variant("BiomeProvider", COLOR_BIOME_PROVIDERS));
+    public static final NodeVariantClass VARIANT_BIOME_PROVIDER_CONDITIONS = addVariant(Renode.variant("BiomeProviderConditions", COLOR_BIOME_PROVIDER_CONDITIONS));
+    public static final NodeVariantClass VARIANT_BIOME_PROVIDER_SCANNERS = addVariant(Renode.variant("BiomeProviderScanners", COLOR_BIOME_PROVIDER_SCANNERS));
+    public static final NodeVariantClass VARIANT_BIOME_PROVIDER_POSITION_CELLS_CELL_TYPES = addVariant(Renode.variant("PositionCellsBiomeProviderCellType", COLOR_BIOME_PROVIDER_POSITION_CELLS_CELL_TYPES));
 
     public static final NodeBuilder NODE_BIOME_PROVIDER_ANCHOR = addNode(VARIANT_BIOME_PROVIDERS.variantNode("Anchor", "Anchor BiomeProvider"))
             .withDescription("Anchors the origin of the child BiomeProvider (Input) to the contextual Anchor if it exists. It essentially puts the {0, 0, 0} origin of the child BiomeProvider at the position of the Anchor.\n" +
@@ -137,7 +143,7 @@ public class RenodeIntegration {
             .addContent(Renode.floatContent("Minimum", "From").withDefaultValue(0.0).withWidth(200).withDescription("The minimum matching value for this Delimiter."))
             .addContent(Renode.floatContent("Maximum", "To").withDefaultValue(0.0).withWidth(200).withDescription("The maximum matching value for this Delimiter."))
             .addVariantOutput("Input", "Input", false, VARIANT_BIOME_PROVIDERS, "Input BiomeProvider, used if this delimiter is selected.")
-            .withColorOverride("27,168,138")
+            .withColorOverride(COLOR_BIOME_PROVIDER_MISC)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
     public static final NodeBuilder NODE_BIOME_PROVIDER_GRADIENT_WARP = addNode(VARIANT_BIOME_PROVIDERS.variantNode("GradientWarp", "GradientWarp BiomeProvider"))
             .withDescription("Domain warps a child BiomeProvider node (Input) based on the gradient (directional slope) of a WarpField Density field.\n" +
@@ -172,7 +178,7 @@ public class RenodeIntegration {
             .addContent(Renode.smallStringContent("Color", "Color").withDefaultValue("#000000").withWidth(200).withDescription("Color to check for."))
             .addContent(Renode.floatContent("Tolerance", "Tolerance").withDefaultValue(0.0).withWidth(50).withDescription("Tolerance for comparing this color to the image, in RGB units (each channel is 0-255)."))
             .addVariantOutput("Input", "Input", false, VARIANT_BIOME_PROVIDERS, "Input BiomeProvider.")
-            .withColorOverride("27,168,138")
+            .withColorOverride(COLOR_BIOME_PROVIDER_MISC)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
     public static final NodeBuilder NODE_BIOME_PROVIDER_IMPORTED = addNode(VARIANT_BIOME_PROVIDERS.variantNode("Imported", "Imported BiomeProvider"))
             .withDescription("Imports an exported BiomeProvider asset.")
@@ -328,7 +334,7 @@ public class RenodeIntegration {
             .addContent(HytaleGeneratorNodes.CONTENT_SKIP)
             .addVariantOutput("Condition", "Condition", false, VARIANT_BIOME_PROVIDER_CONDITIONS, "Condition to check for this case.")
             .addVariantOutput("IfTrue", "IfTrue", false, VARIANT_BIOME_PROVIDERS, "BiomeProvider to apply if the condition is true")
-            .withColorOverride("27,168,138")
+            .withColorOverride(COLOR_BIOME_PROVIDER_MISC)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
     public static final NodeBuilder NODE_BIOME_PROVIDER_VECTOR_WARP = addNode(VARIANT_BIOME_PROVIDERS.variantNode("VectorWarp", "VectorWarp BiomeProvider"))
             .withDescription("Warps the child (Input) BiomeProvider along the provided vector. The amount of warping is determined by the intensity of the second input Density field and the WarpVector's length." +
@@ -353,7 +359,7 @@ public class RenodeIntegration {
             .withDescription("Entry for Weighted BiomeProvider.")
             .addContent(Renode.floatContent("Weight", "Weight").withDefaultValue(1.0).withWidth(50).withDescription("The weight for this entry."))
             .addVariantOutput("Value", "Value", false, VARIANT_BIOME_PROVIDERS, "The BiomeProvider to use if this entry is selected.")
-            .withColorOverride("27,168,138")
+            .withColorOverride(COLOR_BIOME_PROVIDER_MISC)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
 
     public static final AbstractNodeRoot ROOT_BIOME_PROVIDERS = addRoot(Renode.root(VARIANT_BIOME_PROVIDERS, "HytaleGenerator (Carta) - BiomeProvider"));
