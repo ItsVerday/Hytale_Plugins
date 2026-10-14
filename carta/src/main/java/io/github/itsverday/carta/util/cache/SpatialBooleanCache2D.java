@@ -3,6 +3,7 @@ package io.github.itsverday.carta.util.cache;
 import com.hypixel.hytale.function.consumer.BooleanConsumer;
 
 import java.util.function.BooleanSupplier;
+import java.util.function.IntSupplier;
 
 public class SpatialBooleanCache2D {
     private final boolean[] values;
@@ -49,16 +50,14 @@ public class SpatialBooleanCache2D {
 
     public boolean getOrCompute(double x, double z, BooleanSupplier supplier) {
         int key = computeKey(x, z);
-        if (realPositions[indexX(key)] != x) return computeAndPut(x, z, key, supplier);
-        if (realPositions[indexZ(key)] != z) return computeAndPut(x, z, key, supplier);
-        return values[key];
-    }
+        int keyX = indexX(key);
+        int keyZ = indexZ(key);
+        if (realPositions[keyX] == x && realPositions[keyZ] == z) return values[key];
 
-    private boolean computeAndPut(double x, double z, int key, BooleanSupplier supplier) {
         boolean value = supplier.getAsBoolean();
         values[key] = value;
-        realPositions[indexX(key)] = x;
-        realPositions[indexZ(key)] = z;
+        realPositions[keyX] = x;
+        realPositions[keyZ] = z;
         return value;
     }
 

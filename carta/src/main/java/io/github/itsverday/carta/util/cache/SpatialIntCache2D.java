@@ -48,16 +48,14 @@ public class SpatialIntCache2D {
 
     public int getOrCompute(double x, double z, IntSupplier supplier) {
         int key = computeKey(x, z);
-        if (realPositions[indexX(key)] != x) return computeAndPut(x, z, key, supplier);
-        if (realPositions[indexZ(key)] != z) return computeAndPut(x, z, key, supplier);
-        return values[key];
-    }
+        int keyX = indexX(key);
+        int keyZ = indexZ(key);
+        if (realPositions[keyX] == x && realPositions[keyZ] == z) return values[key];
 
-    private int computeAndPut(double x, double z, int key, IntSupplier supplier) {
         int value = supplier.getAsInt();
         values[key] = value;
-        realPositions[indexX(key)] = x;
-        realPositions[indexZ(key)] = z;
+        realPositions[keyX] = x;
+        realPositions[keyZ] = z;
         return value;
     }
 
