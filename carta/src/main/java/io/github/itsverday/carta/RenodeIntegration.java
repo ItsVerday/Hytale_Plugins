@@ -360,6 +360,16 @@ public class RenodeIntegration {
             .addVariantOutput("IfTrue", "IfTrue", false, VARIANT_BIOME_PROVIDERS, "BiomeProvider to apply if the condition is true")
             .withColorOverride(COLOR_BIOME_PROVIDER_MISC)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
+    public static final NodeBuilder NODE_BIOME_PROVIDER_VECTOR_OFFSET = addNode(VARIANT_BIOME_PROVIDERS.variantNode("VectorOffset", "VectorOffset BiomeProvider"))
+            .withDescription("Warps the child (Input) BiomeProvider according to a offset VectorProvider. In other words, the VectorProvider is queried for an offset at each position, and then that offset is added to the position before evaluating the Input BiomeProvider.\n" +
+                    "This node has built-in caching of the child BiomeProvider, but only if GridAlign is enabled. GridAlign rounds each coordinate of the location after scaling, since caching only works for exactly identical positions.\n" +
+                    "GridAlign is recommended to be used, as it usually is not noticeable at all.\n" +
+                    "If not specified, the Input falls back to the Previous BiomeProvider (see Staged/Previous BiomeProviders).")
+            .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
+            .addContent(Renode.checkboxContent("Rounding", "GridAlign").withDefaultValue(false).withDescription("Whether to align the warped position to the grid. Should be left as true if you aren't sure whether to use or not."))
+            .addVariantOutput("Input", "Input", false, VARIANT_BIOME_PROVIDERS)
+            .addVariantOutput("Offset", "Offset", false, HytaleGeneratorNodes.VARIANT_VECTOR_PROVIDERS)
+            .addCategory(CATEGORY_BIOME_PROVIDERS);
     public static final NodeBuilder NODE_BIOME_PROVIDER_VECTOR_WARP = addNode(VARIANT_BIOME_PROVIDERS.variantNode("VectorWarp", "VectorWarp BiomeProvider"))
             .withDescription("Warps the child (Input) BiomeProvider along the provided vector. The amount of warping is determined by the intensity of the second input Density field and the WarpVector's length." +
                     "This node has built-in caching of the child BiomeProvider, but only if GridAlign is enabled. GridAlign rounds each coordinate of the location after scaling, since caching only works for exactly identical positions.\n" +

@@ -88,6 +88,7 @@ public class CartaPlugin extends JavaPlugin {
                 .register("Smoothed", SmoothedBiomeProviderAsset.class, SmoothedBiomeProviderAsset.CODEC)
                 .register("Staged", StagedBiomeProviderAsset.class, StagedBiomeProviderAsset.CODEC)
                 .register("Switch", SwitchBiomeProviderAsset.class, SwitchBiomeProviderAsset.CODEC)
+                .register("VectorOffset", VectorOffsetBiomeProviderAsset.class, VectorOffsetBiomeProviderAsset.CODEC)
                 .register("VectorWarp", VectorWarpBiomeProviderAsset.class, VectorWarpBiomeProviderAsset.CODEC)
                 .register("Weighted", WeightedBiomeProviderAsset.class, WeightedBiomeProviderAsset.CODEC);
 
