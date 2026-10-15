@@ -14,7 +14,7 @@ import java.util.concurrent.Future;
 public class SingleThreadedCarta extends BiCarta<Integer> {
     @Nonnull
     private final BiCarta<Integer> input;
-    private static final ExecutorService executor = Executors.newSingleThreadExecutor(r -> {
+    private final ExecutorService executor = Executors.newSingleThreadExecutor(r -> {
         Thread t = new Thread(r, "HytaleGenerator-Carta-Worker");
         t.setPriority(Thread.MIN_PRIORITY);
         t.setDaemon(true);
