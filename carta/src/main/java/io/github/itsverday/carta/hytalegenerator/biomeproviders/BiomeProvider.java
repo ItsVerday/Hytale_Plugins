@@ -19,10 +19,6 @@ public abstract class BiomeProvider {
         return new CachedBiomeProvider(this);
     }
 
-    public int getPreviousLabel() {
-        return -1;
-    }
-
     public static class Context {
         public Vector3d position;
         public Vector3d anchor;
