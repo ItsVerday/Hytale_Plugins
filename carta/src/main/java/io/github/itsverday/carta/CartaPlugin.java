@@ -105,11 +105,15 @@ public class CartaPlugin extends JavaPlugin {
 
         getCodecRegistry(BiomeProviderScannerAsset.CODEC)
                 .register("Adjacent2D", Adjacent2DBiomeProviderScannerAsset.class, Adjacent2DBiomeProviderScannerAsset.CODEC)
+                .register("DensityLines2D", DensityLines2DBiomeProviderScannerAsset.class, DensityLines2DBiomeProviderScannerAsset.CODEC)
                 .register("DensityRound2D", DensityRound2DBiomeProviderScannerAsset.class, DensityRound2DBiomeProviderScannerAsset.CODEC)
+                .register("DensitySquare2D", DensitySquare2DBiomeProviderScannerAsset.class, DensitySquare2DBiomeProviderScannerAsset.CODEC)
                 .register("Imported", ImportedBiomeProviderScannerAsset.class, ImportedBiomeProviderScannerAsset.CODEC)
+                .register("Lines2D", Lines2DBiomeProviderScannerAsset.class, Lines2DBiomeProviderScannerAsset.CODEC)
                 .register("Offset", OffsetBiomeProviderScannerAsset.class, OffsetBiomeProviderScannerAsset.CODEC)
                 .register("Origin", OriginBiomeProviderScannerAsset.class, OriginBiomeProviderScannerAsset.CODEC)
                 .register("Round2D", Round2DBiomeProviderScannerAsset.class, Round2DBiomeProviderScannerAsset.CODEC)
+                .register("Square2D", Square2DBiomeProviderScannerAsset.class, Square2DBiomeProviderScannerAsset.CODEC)
                 .register("Union", UnionBiomeProviderScannerAsset.class, UnionBiomeProviderScannerAsset.CODEC);
 
         getCodecRegistry(PositionCellsBiomeProviderCellTypeAsset.CODEC)

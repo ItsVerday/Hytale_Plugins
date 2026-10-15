@@ -274,8 +274,22 @@ public class RenodeIntegration {
             .withDescription("Scans locations directly adjacent to the input location in 2D.")
             .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
+    public static final NodeBuilder NODE_BIOME_PROVIDER_SCANNER_DENSITY_LINES_2D = addNode(VARIANT_BIOME_PROVIDER_SCANNERS.variantNode("DensityLines2D", "DensityLines2D BiomeProviderScanner"))
+            .withDescription("Scans locations along lines extending a radius away from the input location in 2D., with the radius being determined by a Density function, a Min Radius, and a Max Radius.")
+            .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
+            .addContent(Renode.floatContent("MinRadius", "Min Radius").withDefaultValue(0.0).withWidth(200).withDescription("Minimum radius to use, when the Density function equals -1."))
+            .addContent(Renode.floatContent("MaxRadius", "Max Radius").withDefaultValue(1.0).withWidth(200).withDescription("Maximum radius to use, when the Density function equals 1."))
+            .addVariantOutput("Density", "Density", false, HytaleGeneratorNodes.VARIANT_DENSITY, "Input Density used to determine the radius. A value of -1 corresponds to the Min Radius, and 1 corresponds to the Max Radius.")
+            .addCategory(CATEGORY_BIOME_PROVIDERS);
     public static final NodeBuilder NODE_BIOME_PROVIDER_SCANNER_DENSITY_ROUND_2D = addNode(VARIANT_BIOME_PROVIDER_SCANNERS.variantNode("DensityRound2D", "DensityRound2D BiomeProviderScanner"))
-            .withDescription("Scans locations within a radius of the input locations in 2D, with the radius being determined by a Density function, a Min Radius, and a Max Radius.")
+            .withDescription("Scans locations within a radius of the input location in 2D, with the radius being determined by a Density function, a Min Radius, and a Max Radius.")
+            .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
+            .addContent(Renode.floatContent("MinRadius", "Min Radius").withDefaultValue(0.0).withWidth(200).withDescription("Minimum radius to use, when the Density function equals -1."))
+            .addContent(Renode.floatContent("MaxRadius", "Max Radius").withDefaultValue(1.0).withWidth(200).withDescription("Maximum radius to use, when the Density function equals 1."))
+            .addVariantOutput("Density", "Density", false, HytaleGeneratorNodes.VARIANT_DENSITY, "Input Density used to determine the radius. A value of -1 corresponds to the Min Radius, and 1 corresponds to the Max Radius.")
+            .addCategory(CATEGORY_BIOME_PROVIDERS);
+    public static final NodeBuilder NODE_BIOME_PROVIDER_SCANNER_DENSITY_SQUARE_2D = addNode(VARIANT_BIOME_PROVIDER_SCANNERS.variantNode("DensitySquare2D", "DensitySquare2D BiomeProviderScanner"))
+            .withDescription("Scans locations within a square area around the input location in 2D, with the radius being determined by a Density function, a Min Radius, and a Max Radius.")
             .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
             .addContent(Renode.floatContent("MinRadius", "Min Radius").withDefaultValue(0.0).withWidth(200).withDescription("Minimum radius to use, when the Density function equals -1."))
             .addContent(Renode.floatContent("MaxRadius", "Max Radius").withDefaultValue(1.0).withWidth(200).withDescription("Maximum radius to use, when the Density function equals 1."))
@@ -296,8 +310,18 @@ public class RenodeIntegration {
             .withDescription("Scans only the input location.")
             .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
             .addCategory(CATEGORY_BIOME_PROVIDERS);
+    public static final NodeBuilder NODE_BIOME_PROVIDER_SCANNER_LINES_2D = addNode(VARIANT_BIOME_PROVIDER_SCANNERS.variantNode("Lines2D", "Lines2D BiomeProviderScanner"))
+            .withDescription("Scans locations along lines extending a fixed radius away from the input location in 2D.")
+            .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
+            .addContent(Renode.floatContent("Radius", "Radius").withDefaultValue(1.0).withWidth(200).withDescription("Scanning radius."))
+            .addCategory(CATEGORY_BIOME_PROVIDERS);
     public static final NodeBuilder NODE_BIOME_PROVIDER_SCANNER_ROUND_2D = addNode(VARIANT_BIOME_PROVIDER_SCANNERS.variantNode("Round2D", "Round2D BiomeProviderScanner"))
-            .withDescription("Scans locations within a fixed radius of the input locations in 2D.")
+            .withDescription("Scans locations within a fixed radius of the input location in 2D.")
+            .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
+            .addContent(Renode.floatContent("Radius", "Radius").withDefaultValue(1.0).withWidth(200).withDescription("Scanning radius."))
+            .addCategory(CATEGORY_BIOME_PROVIDERS);
+    public static final NodeBuilder NODE_BIOME_PROVIDER_SCANNER_SQUARE_2D = addNode(VARIANT_BIOME_PROVIDER_SCANNERS.variantNode("Square2D", "Square2D BiomeProviderScanner"))
+            .withDescription("Scans locations within a square of fixed radius around the input location in 2D.")
             .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
             .addContent(Renode.floatContent("Radius", "Radius").withDefaultValue(1.0).withWidth(200).withDescription("Scanning radius."))
             .addCategory(CATEGORY_BIOME_PROVIDERS);
@@ -309,7 +333,7 @@ public class RenodeIntegration {
     public static final NodeBuilder NODE_BIOME_PROVIDER_SMOOTHED = addNode(VARIANT_BIOME_PROVIDERS.variantNode("Smoothed", "Smoothed BiomeProvider"))
             .withDescription("Applies a smoothing filter to the child (input) BiomeProvider, by sampling all biome values using a given BiomeProviderScanner and picking the most common one, as long as its prevalence is above a certain threshold.\n" +
                     "This BiomeProvider can be very expensive, as it samples the input many times per sample of this node. To mitigate this, caching is used to reduce the amount of checks that need to be done.\n" +
-                    "Still, you should use this node as little as possible, especially with large (>16) Radiuses.\n" +
+                    "Still, you should use this node as little as possible, especially with large (>16) Radius values.\n" +
                     "If not specified, the Input and Fallback fall back to the Previous BiomeProvider (see Staged/Previous BiomeProviders).")
             .addContent(HytaleGeneratorNodes.CONTENT_EXPORT_AS, HytaleGeneratorNodes.CONTENT_SKIP)
             .addContent(Renode.floatContent("Threshold", "Threshold").withDefaultValue(0.5).withWidth(50).withDescription("The threshold value to use for smoothing. The smoothing will only be applied if the most common Biome is at least this threshold times the total number of samples."))
