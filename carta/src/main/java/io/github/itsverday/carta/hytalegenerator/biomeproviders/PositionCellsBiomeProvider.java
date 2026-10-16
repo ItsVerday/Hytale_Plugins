@@ -38,8 +38,8 @@ public class PositionCellsBiomeProvider extends BiomeProvider {
     private final Vector3d rSamplePoint = new Vector3d();
     private final Vector3d rLocalPoint = new Vector3d();
     private final Vector3d rClosestPoint = new Vector3d();
-    private final double[] rMinDistance = new double[1];
-    private final boolean[] rHasClosestPoint = new boolean[1];
+    private double rMinDistance;
+    private boolean rHasClosestPoint;
     private final PositionProvider.Context rPositionsContext = new PositionProvider.Context();
     private final Density.Context rDensityContext = new Density.Context();
     private final FastRandom rRandom = new FastRandom();
@@ -68,15 +68,15 @@ public class PositionCellsBiomeProvider extends BiomeProvider {
         rBoundsMax.set(context.position.x + maxDistance, context.position.y + maxDistance, context.position.z + maxDistance);
 
         rSamplePoint.set(context.position);
-        rMinDistance[0] = Double.MAX_VALUE;
-        rHasClosestPoint[0] = false;
+        rMinDistance = Double.MAX_VALUE;
+        rHasClosestPoint = false;
 
         rPositionsContext.bounds.min.set(rBoundsMin);
         rPositionsContext.bounds.max.set(rBoundsMax);
         rPositionsContext.pipe = this::processPosition;
 
         positions.run(rPositionsContext);
-        if (!rHasClosestPoint[0]) return fallback.process(context);
+        if (!rHasClosestPoint) return fallback.process(context);
 
         PositionCellsBiomeProviderCellType cellTypeHere = cellTypes.getFirst();
         if (cellTypes.size() > 1) {
@@ -91,7 +91,7 @@ public class PositionCellsBiomeProvider extends BiomeProvider {
             }
         }
 
-        return cellTypeHere.process(context, rClosestPoint, Math.max(rMinDistance[0], 0));
+        return cellTypeHere.process(context, rClosestPoint, Math.max(rMinDistance, 0));
     }
 
     private void processPosition(Vector3d providedPoint, Control control) {
@@ -107,10 +107,10 @@ public class PositionCellsBiomeProvider extends BiomeProvider {
             newDistance += Normalizer.normalize(-1, 1, distanceWarpMin, distanceWarpMax, distanceWarpField.evaluate(rDensityContext));
         }
 
-        if (newDistance < maxDistance && newDistance < rMinDistance[0]) {
-            rMinDistance[0] = newDistance;
+        if (newDistance < maxDistance && newDistance < rMinDistance) {
+            rMinDistance = newDistance;
             rClosestPoint.set(providedPoint);
-            rHasClosestPoint[0] = true;
+            rHasClosestPoint = true;
         }
     }
 
