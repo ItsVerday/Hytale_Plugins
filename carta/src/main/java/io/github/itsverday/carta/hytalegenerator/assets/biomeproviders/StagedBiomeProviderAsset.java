@@ -44,7 +44,6 @@ public class StagedBiomeProviderAsset extends BiomeProviderAsset {
 
         BiomeProvider previousInput = null;
 
-        List<BiomeProvider> inputs = new ArrayList<>();
         for (BiomeProviderAsset inputAsset: inputAssets) {
             if (previousInput != null) argument.pushStageLabel(previousLabelNullable, previousInput);
 
