@@ -59,7 +59,7 @@ public class SmoothedBiomeProviderAsset extends BiomeProviderAsset {
 
         BiomeProviderScanner scanner = scannerAsset.build(argument);
         BiomeProvider fallback = BiomeProviderAsset.buildStatic(fallbackAsset, argument, true);
-        return new SmoothedBiomeProvider(input.makeCached(), fallback, scanner, threshold);
+        return new SmoothedBiomeProvider(input, fallback, scanner, threshold);
     }
 
     @Override
