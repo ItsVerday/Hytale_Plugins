@@ -23,7 +23,7 @@ public class VectorOffsetBiomeProviderAsset extends BiomeProviderAsset {
             )
             .add()
             .append(
-                    new KeyedCodec<>("Input", VectorProviderAsset.CODEC, false),
+                    new KeyedCodec<>("Offset", VectorProviderAsset.CODEC, false),
                     (asset, field) -> asset.offsetAsset = field,
                     asset -> asset.offsetAsset
             )
