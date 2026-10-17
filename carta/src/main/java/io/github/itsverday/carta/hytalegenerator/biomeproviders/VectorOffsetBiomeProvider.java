@@ -23,18 +23,15 @@ public class VectorOffsetBiomeProvider extends BiomeProvider {
         this.input = input;
         this.offset = offset;
         this.rounding = rounding;
-
-        rVectorContext.anchor = new Vector3d();
     }
 
     @Override
     public int process(@NonNullDecl Context context) {
         rPosition.set(context.position);
-
-        rVectorContext.anchor.set(context.anchor);
+        rVectorContext.anchor = context.anchor;
         rVectorContext.position.set(rPosition);
-        offset.evaluate(rVectorContext, rOffset);
 
+        offset.evaluate(rVectorContext, rOffset);
         rPosition.add(rOffset);
         if (rounding) rPosition.floor();
 
