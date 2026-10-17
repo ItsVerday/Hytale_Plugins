@@ -124,13 +124,15 @@ public class ImageMapBiomeProviderAsset extends BiomeProviderAsset {
                     int biomeIndex = x + y * image.getWidth();
                     int pixelARGB = image.getRGB(x, y);
                     boolean found = false;
-                    for (int i = 0; i < biomeAssets.length; i++) {
-                        ImageMapBiomeAsset biomeAsset = biomeAssets[i];
-                        int biomeARGB = biomeAsset.color;
-                        if (colorDistanceSquared(pixelARGB, biomeARGB) <= biomeAsset.tolerance * biomeAsset.tolerance) {
-                            biomeIndices[biomeIndex] = (byte) i;
-                            found = true;
-                            break;
+                    if (alphaOf(pixelARGB) > 0) {
+                        for (int i = 0; i < biomeAssets.length; i++) {
+                            ImageMapBiomeAsset biomeAsset = biomeAssets[i];
+                            int biomeARGB = biomeAsset.color;
+                            if (colorDistanceSquared(pixelARGB, biomeARGB) <= biomeAsset.tolerance * biomeAsset.tolerance) {
+                                biomeIndices[biomeIndex] = (byte) i;
+                                found = true;
+                                break;
+                            }
                         }
                     }
 
@@ -141,7 +143,7 @@ public class ImageMapBiomeProviderAsset extends BiomeProviderAsset {
             }
 
             List<BiomeProvider> biomeTable = new ArrayList<>();
-            for (ImageMapBiomeAsset biomeAsset : biomeAssets) {
+            for (ImageMapBiomeAsset biomeAsset: biomeAssets) {
                 biomeTable.add(BiomeProviderAsset.buildStatic(biomeAsset.input, argument, false));
             }
 
@@ -154,7 +156,7 @@ public class ImageMapBiomeProviderAsset extends BiomeProviderAsset {
     }
 
     private Path resolvePath(String path) {
-        for (AssetPack assetPack : AssetModule.get().getAssetPacks()) {
+        for (AssetPack assetPack: AssetModule.get().getAssetPacks()) {
             Path packRootPath = assetPack.getRoot();
             Path imagesDir = packRootPath.resolve("Server").resolve("HytaleGenerator").resolve("Images");
             Path fullPath = PathUtil.resolvePathWithinDir(imagesDir, path);
@@ -166,7 +168,11 @@ public class ImageMapBiomeProviderAsset extends BiomeProviderAsset {
         return null;
     }
 
-    private int colorDistanceSquared(int color1, int color2) {
+    private static int alphaOf(int color) {
+        return (color >> 24) & 0xFF;
+    }
+
+    private static int colorDistanceSquared(int color1, int color2) {
         int r1 = (color1 >> 16) & 0xFF;
         int g1 = (color1 >> 8) & 0xFF;
         int b1 = (color1) & 0xFF;
@@ -182,7 +188,7 @@ public class ImageMapBiomeProviderAsset extends BiomeProviderAsset {
 
     @Override
     public void cleanUp() {
-        for (ImageMapBiomeAsset biomeAsset : biomeAssets) {
+        for (ImageMapBiomeAsset biomeAsset: biomeAssets) {
             biomeAsset.cleanUp();
         }
     }
