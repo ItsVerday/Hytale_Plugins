@@ -16,7 +16,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
       - name: Execute Gradle build
-        run: ./gradlew build
+        run: gradle build
       - name: Archive Renode builds
         uses: actions/upload-artifact@v7
         with:
