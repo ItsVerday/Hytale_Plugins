@@ -17,18 +17,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
       - name: Execute Gradle build
         run: gradle build
-      - name: Archive Renode builds
+      - name: Archive mod builds
         uses: actions/upload-artifact@v7
         with:
           name: mods
-          path: renode/build/libs/*.jar
-      - name: Archive Carta builds
-        uses: actions/upload-artifact@v7
-        with:
-          name: mods
-          path: carta/build/libs/*.jar
-      - name: Archive Extra Asset Roots builds
-        uses: actions/upload-artifact@v7
-        with:
-          name: mods
-          path: extra_asset_roots/build/libs/*.jar
+          path: |
+            renode/build/libs/*.jar
+            carta/build/libs/*.jar
+            extra_asset_roots/build/libs/*.jar
