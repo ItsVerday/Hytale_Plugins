@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RenodePlugin extends JavaPlugin {
-    public final static HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
+    public static HytaleLogger LOGGER;
     private static RenodePlugin instance = null;
 
     private final Config<RenodeConfiguration> config;
@@ -32,6 +32,7 @@ public class RenodePlugin extends JavaPlugin {
 
     public RenodePlugin(@Nonnull JavaPluginInit init) {
         super(init);
+        LOGGER = getLogger();
         instance = this;
         config = withConfig(RenodeConfiguration.CODEC);
     }

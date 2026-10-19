@@ -32,7 +32,7 @@ import java.lang.reflect.Method;
 import java.util.function.Function;
 
 public class ExtraAssetRootsPlugin extends JavaPlugin {
-    public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
+    public static HytaleLogger LOGGER;
 
     private HytaleGenerator hytaleGeneratorPlugin;
     private AssetManager hytaleGeneratorAssetManager;
@@ -40,6 +40,7 @@ public class ExtraAssetRootsPlugin extends JavaPlugin {
 
     public ExtraAssetRootsPlugin(@Nonnull JavaPluginInit init) {
         super(init);
+        LOGGER = getLogger();
     }
 
     @Override

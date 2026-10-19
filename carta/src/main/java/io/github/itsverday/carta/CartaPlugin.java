@@ -42,7 +42,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 public class CartaPlugin extends JavaPlugin {
-    public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
+    public static HytaleLogger LOGGER;
 
     private HytaleGenerator hytaleGeneratorPlugin;
     private AssetManager hytaleGeneratorAssetManager;
@@ -51,6 +51,7 @@ public class CartaPlugin extends JavaPlugin {
 
     public CartaPlugin(@Nonnull JavaPluginInit init) {
         super(init);
+        LOGGER = getLogger();
     }
 
     @Override
