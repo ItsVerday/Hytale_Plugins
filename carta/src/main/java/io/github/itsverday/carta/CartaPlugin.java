@@ -1,8 +1,13 @@
 package io.github.itsverday.carta;
 
+import com.hypixel.hytale.assetstore.AssetMap;
 import com.hypixel.hytale.assetstore.AssetPack;
+import com.hypixel.hytale.assetstore.JsonAsset;
+import com.hypixel.hytale.assetstore.codec.AssetCodec;
 import com.hypixel.hytale.assetstore.event.LoadedAssetsEvent;
+import com.hypixel.hytale.assetstore.event.RemovedAssetsEvent;
 import com.hypixel.hytale.assetstore.map.DefaultAssetMap;
+import com.hypixel.hytale.assetstore.map.JsonAssetWithMap;
 import com.hypixel.hytale.builtin.hytalegenerator.assets.AssetManager;
 import com.hypixel.hytale.builtin.hytalegenerator.assets.worldstructures.WorldStructureAsset;
 import com.hypixel.hytale.builtin.hytalegenerator.plugin.HytaleGenerator;
@@ -27,6 +32,7 @@ import io.github.itsverday.carta.hytalegenerator.assets.biomeproviders.positionc
 import io.github.itsverday.carta.hytalegenerator.assets.biomeproviders.positioncellscelltypes.OriginPositionCellsBiomeProviderCellTypeAsset;
 import io.github.itsverday.carta.hytalegenerator.assets.biomeproviderscanners.*;
 import io.github.itsverday.carta.hytalegenerator.assets.worldstructures.CartaWorldStructureAsset;
+import io.github.itsverday.carta.hytalegenerator.biomeproviderconditions.BiomeProviderCondition;
 
 import javax.annotation.Nonnull;
 import java.lang.reflect.Field;
@@ -122,34 +128,11 @@ public class CartaPlugin extends JavaPlugin {
                 .register("Fill", FillPositionCellsBiomeProviderCellTypeAsset.class, FillPositionCellsBiomeProviderCellTypeAsset.CODEC)
                 .register("Origin", OriginPositionCellsBiomeProviderCellTypeAsset.class, OriginPositionCellsBiomeProviderCellTypeAsset.CODEC);
 
-        getAssetRegistry().register(
-                HytaleAssetStore.builder(BiomeProviderAsset.class, new DefaultAssetMap<>())
-                .setPath("HytaleGenerator/BiomeProviders")
-                .setKeyFunction(BiomeProviderAsset::getId)
-                .setCodec(BiomeProviderAsset.CODEC)
-                .build()
-        );
-
-        getAssetRegistry().register(
-                HytaleAssetStore.builder(BiomeProviderConditionAsset.class, new DefaultAssetMap<>())
-                .setPath("HytaleGenerator/BiomeProviderConditions")
-                .setKeyFunction(BiomeProviderConditionAsset::getId)
-                .setCodec(BiomeProviderConditionAsset.CODEC)
-                .build()
-        );
-
-        getAssetRegistry().register(
-                HytaleAssetStore.builder(BiomeProviderScannerAsset.class, new DefaultAssetMap<>())
-                .setPath("HytaleGenerator/BiomeProviderScanners")
-                .setKeyFunction(BiomeProviderScannerAsset::getId)
-                .setCodec(BiomeProviderScannerAsset.CODEC)
-                .build()
-        );
+        registerAssetStore(BiomeProviderAsset.class, "HytaleGenerator/BiomeProviders", BiomeProviderAsset::getId, BiomeProviderAsset.CODEC);
+        registerAssetStore(BiomeProviderConditionAsset.class, "HytaleGenerator/BiomeProviderConditions", BiomeProviderConditionAsset::getId, BiomeProviderConditionAsset.CODEC);
+        registerAssetStore(BiomeProviderScannerAsset.class, "HytaleGenerator/BiomeProviderScanners", BiomeProviderScannerAsset::getId, BiomeProviderScannerAsset.CODEC);
 
         getEventRegistry().register(LoadedAssetsEvent.class, WorldStructureAsset.class, this::worldStructuresReloaded);
-        getEventRegistry().register(LoadedAssetsEvent.class, BiomeProviderAsset.class, this::biomeProvidersReloaded);
-        getEventRegistry().register(LoadedAssetsEvent.class, BiomeProviderConditionAsset.class, this::biomeProviderConditionsReloaded);
-        getEventRegistry().register(LoadedAssetsEvent.class, BiomeProviderScannerAsset.class, this::biomeScannersReloaded);
         getEventRegistry().register(LoadAssetEvent.class, event -> {
             for (AssetPack pack: AssetModule.get().getAssetPacks()) {
                 onAssetPackLoaded(pack);
@@ -181,15 +164,24 @@ public class CartaPlugin extends JavaPlugin {
         worldStructureAssets = event.getAssetMap();
     }
 
-    private void biomeProvidersReloaded(@Nonnull LoadedAssetsEvent<String, BiomeProviderAsset, DefaultAssetMap<String, BiomeProviderAsset>> event) {
+    private <T extends JsonAssetWithMap<String, M>, M extends AssetMap<String, T>> void registerAssetStore(Class<T> assetClass, String path, Function<T, String> keyFunction, AssetCodec<String, T> codec) {
+        getAssetRegistry().register(
+                HytaleAssetStore.builder(assetClass, (M) new DefaultAssetMap<String, T>())
+                .setPath(path)
+                .setKeyFunction(keyFunction)
+                .setCodec(codec)
+                .build()
+        );
+
+        getEventRegistry().register(LoadedAssetsEvent.class, assetClass, this::loadedAssets);
+        getEventRegistry().register(RemovedAssetsEvent.class, assetClass, this::removedAssets);
+    }
+
+    private <T extends JsonAsset<String>> void loadedAssets(@Nonnull LoadedAssetsEvent<String, T, DefaultAssetMap<String, T>> event) {
         triggerReload();
     }
 
-    private void biomeProviderConditionsReloaded(@Nonnull LoadedAssetsEvent<String, BiomeProviderConditionAsset, DefaultAssetMap<String, BiomeProviderConditionAsset>> event) {
-        triggerReload();
-    }
-
-    private void biomeScannersReloaded(@Nonnull LoadedAssetsEvent<String, BiomeProviderScannerAsset, DefaultAssetMap<String, BiomeProviderScannerAsset>> event) {
+    private <T extends JsonAsset<String>> void removedAssets(@Nonnull RemovedAssetsEvent<String, T, DefaultAssetMap<String, T>> event) {
         triggerReload();
     }
 

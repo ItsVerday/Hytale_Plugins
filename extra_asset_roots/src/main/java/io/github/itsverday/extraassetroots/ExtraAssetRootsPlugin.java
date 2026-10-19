@@ -1,10 +1,10 @@
 package io.github.itsverday.extraassetroots;
 
 import com.hypixel.hytale.assetstore.AssetMap;
-import com.hypixel.hytale.assetstore.AssetRegistry;
 import com.hypixel.hytale.assetstore.JsonAsset;
 import com.hypixel.hytale.assetstore.codec.AssetCodec;
 import com.hypixel.hytale.assetstore.event.LoadedAssetsEvent;
+import com.hypixel.hytale.assetstore.event.RemovedAssetsEvent;
 import com.hypixel.hytale.assetstore.map.DefaultAssetMap;
 import com.hypixel.hytale.assetstore.map.JsonAssetWithMap;
 import com.hypixel.hytale.builtin.hytalegenerator.assets.AssetManager;
@@ -17,7 +17,6 @@ import com.hypixel.hytale.builtin.hytalegenerator.assets.materialproviders.Mater
 import com.hypixel.hytale.builtin.hytalegenerator.assets.patterns.PatternAsset;
 import com.hypixel.hytale.builtin.hytalegenerator.assets.scanners.ScannerAsset;
 import com.hypixel.hytale.builtin.hytalegenerator.assets.vectorproviders.VectorProviderAsset;
-import com.hypixel.hytale.builtin.hytalegenerator.graph.edgeselectors.EdgeSelector;
 import com.hypixel.hytale.builtin.hytalegenerator.plugin.HytaleGenerator;
 import com.hypixel.hytale.common.plugin.PluginIdentifier;
 import com.hypixel.hytale.common.semver.SemverRange;
@@ -84,10 +83,15 @@ public class ExtraAssetRootsPlugin extends JavaPlugin {
                 .build()
         );
 
-        getEventRegistry().register(LoadedAssetsEvent.class, assetClass, this::eventCallback);
+        getEventRegistry().register(LoadedAssetsEvent.class, assetClass, this::loadedAssets);
+        getEventRegistry().register(RemovedAssetsEvent.class, assetClass, this::removedAssets);
     }
 
-    private <T extends JsonAsset<String>> void eventCallback(@Nonnull LoadedAssetsEvent<String, T, DefaultAssetMap<String, T>> event) {
+    private <T extends JsonAsset<String>> void loadedAssets(@Nonnull LoadedAssetsEvent<String, T, DefaultAssetMap<String, T>> event) {
+        triggerReload();
+    }
+
+    private <T extends JsonAsset<String>> void removedAssets(@Nonnull RemovedAssetsEvent<String, T, DefaultAssetMap<String, T>> event) {
         triggerReload();
     }
 
