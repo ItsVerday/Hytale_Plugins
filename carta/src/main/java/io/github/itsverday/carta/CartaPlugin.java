@@ -32,7 +32,6 @@ import io.github.itsverday.carta.hytalegenerator.assets.biomeproviders.positionc
 import io.github.itsverday.carta.hytalegenerator.assets.biomeproviders.positioncellscelltypes.OriginPositionCellsBiomeProviderCellTypeAsset;
 import io.github.itsverday.carta.hytalegenerator.assets.biomeproviderscanners.*;
 import io.github.itsverday.carta.hytalegenerator.assets.worldstructures.CartaWorldStructureAsset;
-import io.github.itsverday.carta.hytalegenerator.biomeproviderconditions.BiomeProviderCondition;
 
 import javax.annotation.Nonnull;
 import java.lang.reflect.Field;
