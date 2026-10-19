@@ -20,15 +20,15 @@ jobs:
       - name: Archive Renode builds
         uses: actions/upload-artifact@v7
         with:
-          name: Renode
+          name: mods
           path: renode/build/libs/*.jar
       - name: Archive Carta builds
         uses: actions/upload-artifact@v7
         with:
-          name: Carta
+          name: mods
           path: carta/build/libs/*.jar
       - name: Archive Extra Asset Roots builds
         uses: actions/upload-artifact@v7
         with:
-          name: Extra Asset Roots
+          name: mods
           path: extra_asset_roots/build/libs/*.jar
