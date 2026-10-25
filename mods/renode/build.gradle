@@ -17,6 +17,10 @@ tasks.register("executeScraper", JavaExec) {
     classpath = sourceSets.main.compileClasspath + sourceSets.main.runtimeClasspath
 }
 
+jar {
+    destinationDirectory = rootProject.layout.buildDirectory.dir("mods")
+}
+
 hytaleTools {
     modId = "Renode"
     version = getProperty("renode.version")

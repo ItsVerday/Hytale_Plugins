@@ -1,1 +1,5 @@
-include("common", "renode", "carta", "extra_asset_roots")
+include("common", "carta", "extra_asset_roots", "renode")
+
+project(":carta").projectDir = new File(settingsDir, "mods/carta")
+project(":extra_asset_roots").projectDir = new File(settingsDir, "mods/extra_asset_roots")
+project(":renode").projectDir = new File(settingsDir, "mods/renode")

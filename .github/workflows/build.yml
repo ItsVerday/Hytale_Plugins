@@ -21,7 +21,4 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: mods
-          path: |
-            renode/build/libs/*.jar
-            carta/build/libs/*.jar
-            extra_asset_roots/build/libs/*.jar
+          path: build/mods/*.jar
