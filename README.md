@@ -1,4 +1,5 @@
-This is a shared repository for all of my Worldgen v2 Hytale mods, and related mods.
-Below you can find links to each project's README.
-
-# [Renode](https://github.com/ItsVerday/Hytale_Worldgen_Mods/tree/main/mods/renode) - [Carta](https://github.com/ItsVerday/Hytale_Worldgen_Mods/tree/main/mods/carta) - [Extra Worldgen v2 Asset Roots](https://github.com/ItsVerday/Hytale_Worldgen_Mods/tree/main/mods/extra_asset_roots)
+This is a shared repository for all of my Hytale plugins, including my Worldgen v2 library mods.
+Below you can find links to each project's README:
+- [Renode](https://github.com/ItsVerday/Hytale_Plugins/tree/main/mods/renode) - Asset Node Editor custom node support
+- [Carta](https://github.com/ItsVerday/Hytale_Plugins/tree/main/mods/carta) - Worldgen v2 Biome Placement system
+- [Extra Worldgen v2 Asset Roots](https://github.com/ItsVerday/Hytale_Plugins/tree/main/mods/extra_asset_roots) - Worldgen v2 extra asset roots
