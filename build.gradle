@@ -10,7 +10,7 @@ repositories {
 group = "io.github.itsverday"
 
 hytaleWorkspace {
-    modProjects = [":renode", ":carta", ":extra_asset_roots"]
+    modProjects = [":renode", ":carta", ":infinistack", ":extra_asset_roots"]
 
     manifestGroup = "Verday"
     hytaleVersion = getProperty("hytale.version")

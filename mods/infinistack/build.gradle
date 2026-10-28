@@ -1,0 +1,24 @@
+plugins {
+    id "com.azuredoom.hytale-tools"
+    id "application"
+}
+
+dependencies {
+    implementation project(":common")
+}
+
+jar {
+    destinationDirectory = rootProject.layout.buildDirectory.dir("mods")
+}
+
+hytaleTools {
+    modId = "Infinistack"
+    version = getProperty("infinistack.version")
+    mainClass = "io.github.itsverday.infinistack.InfinistackPlugin"
+    manifestDependencies = ""
+    modDescription = "Removes item stack size limits, with configurable overrides."
+    modCredits = "Verday"
+    modUrl = "https://github.com/ItsVerday/Hytale_Plugins"
+
+    bundleAssetEditorRuntime = false
+}

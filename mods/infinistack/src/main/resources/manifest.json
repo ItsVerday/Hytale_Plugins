@@ -1,0 +1,25 @@
+{
+    "Group": "Verday",
+    "Name": "Infinistack",
+    "Version": "0.1.0",
+    "Description": "Removes item stack size limits, with configurable overrides.",
+    "Authors": [
+        {
+            "Name": "Verday"
+        }
+    ],
+    "Website": "https://github.com/ItsVerday/Hytale_Plugins",
+    "ServerVersion": ">=0.7.4",
+    "Dependencies": {
+        
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "io.github.itsverday.infinistack.InfinistackPlugin",
+    "IncludesAssetPack": false,
+    "UpdateChecker": {
+        "CurseForge": ""
+    }
+}
