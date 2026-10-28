@@ -39,7 +39,7 @@ hytaleTools {
     manifestOptionalDependencies = "Verday:Renode=" + getProperty("renode.check_version")
     modDescription = "Adds a flexible Biome placement system for Worldgen v2."
     modCredits = "Verday"
-    modUrl = "https://github.com/ItsVerday/Hytale_Worldgen_Mods"
+    modUrl = "https://github.com/ItsVerday/Hytale_Plugins"
 
     bundleAssetEditorRuntime = false
 }

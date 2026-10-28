@@ -8,7 +8,7 @@
             "Name": "Verday"
         }
     ],
-    "Website": "https://github.com/ItsVerday/Hytale_Worldgen_Mods",
+    "Website": "https://github.com/ItsVerday/Hytale_Plugins",
     "ServerVersion": ">=0.7.4",
     "Dependencies": {
         "Hytale:HytaleGenerator": "1.0.0"
